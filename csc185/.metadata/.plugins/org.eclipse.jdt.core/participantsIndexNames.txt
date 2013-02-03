@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+C:\Users\darlwisa\csc185\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1593967838.index
+\KoKoKarlo\src
+C:\Users\darlwisa\csc185\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1100138953.index
+\springapp\src
