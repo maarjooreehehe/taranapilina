@@ -4,11 +4,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import kokokarlo.dao.InMemoryLoginDao;
+import kokokarlo.dao.JdbcLoginDao;
+import kokokarlo.dao.LoginDao;
 import kokokarlo.domain.Login;
 
 public class LoginManager {
 	private List<Login> logins;
+	private LoginDao loginDao;
 	private Map<String, String> map = new HashMap<String, String>();
+	
+	public LoginManager(){
+		loginDao = new JdbcLoginDao();
+	}
 
 	public Map<String, String> getUsers() {
 		if (logins != null) {
@@ -20,11 +28,18 @@ public class LoginManager {
 	}
 
 	public List<Login> getLogins() {
-		return logins;
+		return loginDao.getLoginList();
 	}
 
-	public void setLogins(List<Login> logins) {
-		this.logins = logins;
+	public void setLoginDao(LoginDao loginDao) {
+		this.loginDao = loginDao;
 	}
 
+	public void addLogin(Login login){
+		loginDao.addLogin(login);
+	}
+	
+	public int deleteLogin(int id){
+		return loginDao.deleteLogin(id);
+	}
 }

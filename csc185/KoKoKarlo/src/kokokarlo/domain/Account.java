@@ -1,13 +1,14 @@
 package kokokarlo.domain;
 
 public class Account {
-	private String username;
+
 	private String password;
-	private String firstName;
-	private String lastName;
+	private String dateOfBirth;	
+	private String username;
 	private String email;
 	private String contactNumber;
-	private String dateOfBirth;
+	private String firstName;
+	private String lastName;
 
 	
 	public String getUsername() {

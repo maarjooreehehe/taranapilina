@@ -13,6 +13,7 @@
 	<form:form method="post" commandName="login">	
 	    Username:<form:input path="username"/><form:errors path="username" cssClass="error"/><br>
 	    Password:<form:password path="password"/> <form:errors path="password" cssClass="error"/>
+	    <br/>
 	    <input type="submit" value="Login"/>
 	</form:form>
 </body>

@@ -5,33 +5,29 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
        
-     <bean id="projectManager" class="kokokarlo.service.SimpleProjectManager">
-        <property name="listOfProjects">
-            <list>
-                <ref bean="project1"/>
-                <ref bean="project2"/>
-            </list>
+     
+    <bean id="loginManager" class="kokokarlo.service.LoginManager">
+        <property name="loginDao" ref="loginDao" />
+            
+        
+    </bean>
+<!--     
+    <bean id="loginDao1" class="kokokarlo.dao.InMemoryLoginDao">
+        <property name="loginList">
+        	<list>
+        		<ref bean="login1" />
+        		<ref bean="login2" />
+        		<ref bean="login3" />
+        		<ref bean="login4" />
+        		<ref bean="login5" />
+        	</list>
         </property>
     </bean>
     
-     <bean id="project1" class="kokokarlo.domain.Project">
-        <property name="name" value="kokokarlo"/>
-    </bean>
-    
-    <bean id="project2" class="kokokarlo.domain.Project">
-        <property name="name" value="javawockeez"/>
-    </bean>
     
     <bean id="loginAuthenticator" class="kokokarlo.service.LoginAuthenticator">
-        <property name="logins">
-            <list>
-                <ref bean="login1"/>
-                <ref bean="login2"/>
-                <ref bean="login3"/>
-                <ref bean="login4"/>
-                <ref bean="login5"/>
-            </list>
-        </property>
+        <property name="loginDao" ref="loginDao1" />
+            
     </bean>
     
     
@@ -61,6 +57,7 @@
         <property name="password" value="bulala"/>
     </bean>
     
+    -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="messages"/>
     </bean>
@@ -79,14 +76,20 @@
         <property name="successView" value="loginsuccess.htm"/>
     </bean>
     
+    <bean name="/addlogin.htm" class="kokokarlo.web.AddLoginFormController">
+		<property name="sessionForm" value="true" />
+		<property name="commandName" value="addLogin" />
+		
+		<property name="commandClass" value="kokokarlo.domain.Login" />
+		<property name="formView" value="addlogin" />
+		<property name="successView" value="login.htm" />
+		<property name="loginManager" ref="loginManager" />
+	</bean>
+	
+    
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
-    </bean>
-    
-    <bean name="/main.htm" class="kokokarlo.web.ProjectController">
-		<property name="projectManager" ref="projectManager" />
-	</bean>
-         
+    </bean>     
 </beans>

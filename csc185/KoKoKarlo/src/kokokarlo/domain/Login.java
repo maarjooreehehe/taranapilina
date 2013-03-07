@@ -2,6 +2,7 @@ package kokokarlo.domain;
 
 public class Login {
 	
+	private int loginId;
 	private String username;
 	private String password;
 	
@@ -19,6 +20,14 @@ public class Login {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public void setLoginId(int loginId) {
+		this.loginId = loginId;
+	}
+
+	public int getLoginId() {
+		return loginId;
 	}
 	
 	
