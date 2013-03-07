@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="KoKoKarlo" basedir="." default="usage">
+<project name="kokokarlo" basedir="." default="usage">
 	<property file="build.properties" />
 
-	<property name="name" value="KoKoKarlo" />
+	<property name="name" value="kokokarlo" />
 	<property name="app.dir" value="${user.home}/csc185/${name}" />
 	<property name="src.dir" value="${app.dir}/src" />
 	<property name="web.dir" value="${app.dir}/WebContent" />
@@ -162,6 +162,10 @@
 			password="${tomcat.manager.password}" />
 	</target>
 
+	<presetdef name="javac">
+		    <javac includeantruntime="false" />
+		  </presetdef>
+	
 	<!-- End Tomcat tasks -->
 
 </project>

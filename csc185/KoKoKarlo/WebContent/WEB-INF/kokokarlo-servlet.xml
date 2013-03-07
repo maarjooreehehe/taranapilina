@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       
+     <bean id="projectManager" class="kokokarlo.service.SimpleProjectManager">
+        <property name="listOfProjects">
+            <list>
+                <ref bean="project1"/>
+                <ref bean="project2"/>
+            </list>
+        </property>
+    </bean>
+    
+     <bean id="project1" class="kokokarlo.domain.Project">
+        <property name="name" value="kokokarlo"/>
+    </bean>
+    
+    <bean id="project2" class="kokokarlo.domain.Project">
+        <property name="name" value="javawockeez"/>
+    </bean>
+    
+    <bean id="loginAuthenticator" class="kokokarlo.service.LoginAuthenticator">
+        <property name="logins">
+            <list>
+                <ref bean="login1"/>
+                <ref bean="login2"/>
+                <ref bean="login3"/>
+                <ref bean="login4"/>
+                <ref bean="login5"/>
+            </list>
+        </property>
+    </bean>
+    
+    
+
+    <bean id="login1" class="kokokarlo.domain.Login">
+        <property name="username" value="carlo"/>
+        <property name="password" value="apas"/>
+    </bean>
+        
+    <bean id="login2" class="kokokarlo.domain.Login">
+        <property name="username" value="jemuel"/>
+        <property name="password" value="racsa"/>
+    </bean>
+
+    <bean id="login3" class="kokokarlo.domain.Login">
+        <property name="username" value="michelle"/>
+        <property name="password" value="saavedra"/>
+    </bean>
+    
+    <bean id="login4" class="kokokarlo.domain.Login">
+        <property name="username" value="rhea"/>
+        <property name="password" value="lacida"/>
+    </bean>
+    
+    <bean id="login5" class="kokokarlo.domain.Login">
+        <property name="username" value="ivy"/>
+        <property name="password" value="bulala"/>
+    </bean>
+    
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+    
+    <bean name="/loginsuccess.htm" class="kokokarlo.web.LoginSuccessController">
+    </bean>
+	
+    <bean name="/login.htm" class="kokokarlo.web.LoginFormController">
+        <property name="sessionForm" value="true"/>
+        <property name="commandName" value="login"/>
+        <property name="commandClass" value="kokokarlo.domain.Login"/>
+        <property name="validator" ref="loginAuthenticator">
+   <!--         <bean class="kokokarlo.service.LoginAuthenticator"/> -->
+        </property> 
+        <property name="formView" value="login"/>
+        <property name="successView" value="loginsuccess.htm"/>
+    </bean>
+    
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    
+    <bean name="/main.htm" class="kokokarlo.web.ProjectController">
+		<property name="projectManager" ref="projectManager" />
+	</bean>
+         
+</beans>
