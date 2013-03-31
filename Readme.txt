@@ -5,7 +5,11 @@ Owling is a Power Consumption Monitoring Software Application. It helps resident
 :)
 
 Developed By: 
-Ivy Bulala
+Ivy May Bulala
 Marjelyn Ebio
 Hillary Lacida
 Romarie Yuag
+
+
+
+Testing...
