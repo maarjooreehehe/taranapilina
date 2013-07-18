@@ -1,0 +1,6 @@
+Vision:
+An online system that minimizes a person’s time and effort in buying and selling products.
+
+Mission:
+To create a system that will help sellers display their products with specific information, like its price and description, along with a photo they wish for potential shoppers to view.
+To create a system that will help shoppers save time in selecting and purchasing specific items they are looking for.
