@@ -50,14 +50,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${accountInstance?.address}">
-				<li class="fieldcontain">
-					<span id="address-label" class="property-label"><g:message code="account.address.label" default="Address" /></span>
-					
-						<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${accountInstance}" field="address"/></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${accountInstance?.emailAddress}">
 				<li class="fieldcontain">
@@ -68,23 +60,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${accountInstance?.phoneNumber}">
-				<li class="fieldcontain">
-					<span id="phoneNumber-label" class="property-label"><g:message code="account.phoneNumber.label" default="Phone Number" /></span>
-					
-						<span class="property-value" aria-labelledby="phoneNumber-label"><g:fieldValue bean="${accountInstance}" field="phoneNumber"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${accountInstance?.gender}">
-				<li class="fieldcontain">
-					<span id="gender-label" class="property-label"><g:message code="account.gender.label" default="Gender" /></span>
-					
-						<span class="property-value" aria-labelledby="gender-label"><g:fieldValue bean="${accountInstance}" field="gender"/></span>
-					
-				</li>
-				</g:if>
 			
 			</ol>
 			<g:form>

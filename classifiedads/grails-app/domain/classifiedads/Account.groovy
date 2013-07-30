@@ -12,6 +12,5 @@ class Account {
 		username(blank:false)
 		password(blank:false)
 		emailAddress(blank:false)
- }
-	
+}
 }

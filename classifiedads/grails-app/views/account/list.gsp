@@ -30,11 +30,11 @@
 					
 						<g:sortableColumn property="password" title="${message(code: 'account.password.label', default: 'Password')}" />
 					
-						<g:sortableColumn property="address" title="${message(code: 'account.address.label', default: 'Address')}" />
+						
 					
 						<g:sortableColumn property="emailAddress" title="${message(code: 'account.emailAddress.label', default: 'Email Address')}" />
 					
-						<g:sortableColumn property="phoneNumber" title="${message(code: 'account.phoneNumber.label', default: 'Phone Number')}" />
+						
 					
 					</tr>
 				</thead>
@@ -50,9 +50,9 @@
 					
 						<td>${fieldValue(bean: accountInstance, field: "address")}</td>
 					
-						<td>${fieldValue(bean: accountInstance, field: "emailAddress")}</td>
+						
 					
-						<td>${fieldValue(bean: accountInstance, field: "phoneNumber")}</td>
+						
 					
 					</tr>
 				</g:each>
