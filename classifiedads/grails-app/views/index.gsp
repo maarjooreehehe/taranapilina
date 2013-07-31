@@ -52,24 +52,36 @@
 					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul>
-							<li><a href="./products.html">Woman</a>					
-								<ul>
-									<li><a href="./products.html">Lacinia nibh</a></li>									
-									<li><a href="./products.html">Eget molestie</a></li>
-									<li><a href="./products.html">Varius purus</a></li>									
-								</ul>
-							</li>															
-							<li><a href="./products.html">Man</a></li>			
-							<li><a href="./products.html">Sport</a>
+							<li><a href="#">Categories</a>
 								<ul>									
-									<li><a href="./products.html">Gifts and Tech</a></li>
-									<li><a href="./products.html">Ties and Hats</a></li>
-									<li><a href="./products.html">Cold Weather</a></li>
+									<li><a href="#">Real State</a></li>
+									<li><a href="#">Phones</a></li>
+									<li><a href="#">Cars and Automotives</a></li>
+								</ul>
+								</li>			
+							<li><a href="#">Location</a>
+								<ul>									
+									<li><a href="#">Manila</a></li>
+									<li><a href="#">CDO</a></li>
+									<li><a href="#">Iligan</a></li>
 								</ul>
 							</li>							
-							<li><a href="./products.html">Hangbag</a></li>
-							<li><a href="./products.html">Best Seller</a></li>
-							<li><a href="./products.html">Top Seller</a></li>
+							<li><a href="#">Price Range</a>
+								<ul>									
+									<li><a href="#">Under P100</a></li>
+									<li><a href="#">P100 to P200</a></li>
+									<li><a href="#">P250 to P500</a></li>
+									<li><a href="#">P500 to P1000</a></li>
+									<li><a href="#">P1000 and above</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Condition</a>
+								<ul>									
+									<li><a href="#">Brand New</a></li>
+									<li><a href="#">Second Hand (Used)</a></li>
+									<li><a href="#">Defective</a></li>
+								</ul>
+							</li>	
 						</ul>
 					</nav>
 				</div>
