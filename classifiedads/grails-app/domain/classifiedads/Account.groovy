@@ -9,8 +9,8 @@ class Account {
 	
     static constraints = {
 		name(blank:false)
-		username(blank:false)
-		password(blank:false)
+		username(size:6..8,unique:true, blank:false) 
+        password(size:6..8,blank:false) 
 		emailAddress(blank:false)
 }
 }
