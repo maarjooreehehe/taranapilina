@@ -24,15 +24,15 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="name" title="${message(code: 'account.name.label', default: 'Name')}" />
+						<g:sortableColumn property="name" title="${message(code: 'account.name.label', default: 'Name:')}" />
 					
-						<g:sortableColumn property="username" title="${message(code: 'account.username.label', default: 'Username')}" />
+						<g:sortableColumn property="username" title="${message(code: 'account.username.label', default: 'Username:')}" />
 					
-						<g:sortableColumn property="password" title="${message(code: 'account.password.label', default: 'Password')}" />
+						<g:sortableColumn property="password" title="${message(code: 'account.password.label', default: 'Password:')}" />
 					
 						
 					
-						<g:sortableColumn property="emailAddress" title="${message(code: 'account.emailAddress.label', default: 'Email Address')}" />
+						<g:sortableColumn property="emailAddress" title="${message(code: 'account.emailAddress.label', default: 'Email Address:')}" />
 					
 						
 					
@@ -48,7 +48,7 @@
 					
 						<td>${fieldValue(bean: accountInstance, field: "password")}</td>
 					
-						<td>${fieldValue(bean: accountInstance, field: "address")}</td>
+						<td>${fieldValue(bean: accountInstance, field: "emailAddress")}</td>
 					
 						
 					
