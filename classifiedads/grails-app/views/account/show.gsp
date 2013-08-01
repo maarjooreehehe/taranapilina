@@ -25,7 +25,7 @@
 			
 				<g:if test="${accountInstance?.name}">
 				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="account.name.label" default="Name" /></span>
+					<span id="name-label" class="property-label"><g:message code="account.name.label" default="Name:" /></span>
 					
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="name"/></span>
 					
@@ -34,7 +34,7 @@
 			
 				<g:if test="${accountInstance?.username}">
 				<li class="fieldcontain">
-					<span id="username-label" class="property-label"><g:message code="account.username.label" default="Username" /></span>
+					<span id="username-label" class="property-label"><g:message code="account.username.label" default="Username:" /></span>
 					
 						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${accountInstance}" field="username"/></span>
 					
@@ -43,7 +43,7 @@
 			
 				<g:if test="${accountInstance?.password}">
 				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="account.password.label" default="Password" /></span>
+					<span id="password-label" class="property-label"><g:message code="account.password.label" default="Password:" /></span>
 					
 						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${accountInstance}" field="password"/></span>
 					
@@ -53,7 +53,7 @@
 			
 				<g:if test="${accountInstance?.emailAddress}">
 				<li class="fieldcontain">
-					<span id="emailAddress-label" class="property-label"><g:message code="account.emailAddress.label" default="Email Address" /></span>
+					<span id="emailAddress-label" class="property-label"><g:message code="account.emailAddress.label" default="Email Address:" /></span>
 					
 						<span class="property-value" aria-labelledby="emailAddress-label"><g:fieldValue bean="${accountInstance}" field="emailAddress"/></span>
 					
