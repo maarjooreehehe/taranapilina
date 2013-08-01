@@ -3,6 +3,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="layout" content="main"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
@@ -27,64 +28,6 @@
 		<![endif]-->
 	</head>
     <body>		
-		<div id="top-bar" class="container">
-			<div class="row">
-				<div class="span4">
-					<form method="post" class="search_form">
-						
-						<input type="text" class="input-block-level search-query" placeholder="eg. T-sirt">
-					</form>
-				</div>
-				<div class="span8">
-					<div class="account pull-right">
-						<ul class="user-menu">				
-							<li><a href="#">Login</a></li>					
-							<li><g:link controller="account" action="create">Register</g:link></li>		
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="wrapper" class="container">
-			<section class="navbar main-menu">
-				<div class="navbar-inner main-menu">				
-					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="../themes/images//logo.png" class="site_logo" alt=""></a>
-					<nav id="menu" class="pull-right">
-						<ul>
-							<li><a href="#">Categories</a>
-								<ul>									
-									<li><a href="#">Real State</a></li>
-									<li><a href="#">Phones</a></li>
-									<li><a href="#">Cars and Automotives</a></li>
-								</ul>
-								</li>			
-							<li><a href="#">Location</a>
-								<ul>									
-									<li><a href="#">Manila</a></li>
-									<li><a href="#">CDO</a></li>
-									<li><a href="#">Iligan</a></li>
-								</ul>
-							</li>							
-							<li><a href="#">Price Range</a>
-								<ul>									
-									<li><a href="#">Under P100</a></li>
-									<li><a href="#">P100 to P200</a></li>
-									<li><a href="#">P250 to P500</a></li>
-									<li><a href="#">P500 to P1000</a></li>
-									<li><a href="#">P1000 and above</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Condition</a>
-								<ul>									
-									<li><a href="#">Brand New</a></li>
-									<li><a href="#">Second Hand (Used)</a></li>
-									<li><a href="#">Defective</a></li>
-								</ul>
-							</li>	
-						</ul>
-					</nav>
-				</div>
-			</section>			
 			<section class="header_text sub">
 			<img class="pageBanner" src="../themes/images/pageBanner.png" alt="New products" >
 			</section>			
@@ -158,7 +101,8 @@
 				<span>Copyright 2013 One Shoppe  All right reserved.</span>
 			</section>
 		</div>
-		<script src="themes/js/common.js"></script>
+		<script src="../themes/js/common.js"></script>
+		<script src="../themes/js/jquery.flexslider-min.js"></script>
 		<script>
 			$(document).ready(function() {
 				$('#checkout').click(function (e) {

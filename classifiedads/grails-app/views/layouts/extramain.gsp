@@ -24,7 +24,7 @@
 			<div class="row">
 				<div class="span4">
 					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="QWERTY" class="input-xlarge">
+						<input type="text" class="input-block-level search-query" Placeholder="QWERTY">
 					</form>
 				</div>
 				<div class="span8">
@@ -41,7 +41,7 @@
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
 			
-					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="../themes/images/logo.png" class="site_logo" alt=""></a>
+					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
 					
 					<nav id="menu" class="pull-right">
 						<ul>

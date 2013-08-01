@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content=""/>
-		<title>Shoppe 'til you drop!</title>
+		<meta name="layout" content="extramain"/>
+		<title>Post and Shoppe 'til you drop!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
@@ -26,66 +26,7 @@
 			<script src="js/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body>
-	
-	<div id="top-bar" class="container">
-			<div class="row">
-				<div class="span4">
-					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">
-					</form>
-				</div>
-				<div class="span8">
-					<div class="account pull-right">
-						<ul class="user-menu">				
-							<li><a href="checkout.html">Login</a></li>					
-							<li><g:link controller="account" action="create">Register</g:link></li>		
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="wrapper" class="container">
-			<section class="navbar main-menu">
-				<div class="navbar-inner main-menu">
-			
-					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
-					<nav id="menu" class="pull-right">
-						<ul>
-							<li><a href="#">Categories</a>
-								<ul>									
-									<li><a href="#">Real State</a></li>
-									<li><a href="#">Phones</a></li>
-									<li><a href="#">Cars and Automotives</a></li>
-								</ul>
-								</li>			
-							<li><a href="#">Location</a>
-								<ul>									
-									<li><a href="#">Manila</a></li>
-									<li><a href="#">CDO</a></li>
-									<li><a href="#">Iligan</a></li>
-								</ul>
-							</li>							
-							<li><a href="#">Price Range</a>
-								<ul>									
-									<li><a href="#">Under P100</a></li>
-									<li><a href="#">P100 to P200</a></li>
-									<li><a href="#">P250 to P500</a></li>
-									<li><a href="#">P500 to P1000</a></li>
-									<li><a href="#">P1000 and above</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Condition</a>
-								<ul>									
-									<li><a href="#">Brand New</a></li>
-									<li><a href="#">Second Hand (Used)</a></li>
-									<li><a href="#">Defective</a></li>
-								</ul>
-							</li>	
-						</ul>
-					</nav>
-				</div>
-			</section>
+	<body>	
 			<section  class="homepage-slider" id="home-slider">
 				<div class="flexslider">
 					<ul class="slides">
