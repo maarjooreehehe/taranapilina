@@ -22,7 +22,7 @@
 		<g:message code="account.username.label" default="Username" />
 		<span class="required-indicator">*</span>
 	</label>
-	<input type= "text" maxlength='8' name="username" required="" value="${accountInstance?.username}" placeholder="Enter your username.6-8 characters only" class="input-xlarge" />
+	<input type= "text" maxlength='10' name="username" required="" value="${accountInstance?.username}" placeholder="Enter your username.6-10 characters only" class="input-xlarge" />
 	<p>NOTE: Please be reminded that username change is NOT allowed.</p>
 </div>
 
@@ -31,6 +31,6 @@
 		<g:message code="account.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<input type = "password" maxlength = '8' name="password" required="" value="${accountInstance?.password}" placeholder="Enter your password.6-8 characters only" class="input-xlarge" />
+	<input type = "password" maxlength = '10' name="password" required="" value="${accountInstance?.password}" placeholder="Enter your password.6-10 characters only" class="input-xlarge" />
 	
 	</div>

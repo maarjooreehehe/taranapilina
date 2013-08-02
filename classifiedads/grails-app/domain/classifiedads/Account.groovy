@@ -8,9 +8,9 @@ class Account {
 		String emailAddress
 	
     static constraints = {
-		name(blank:false)
-		username(size:6..8,unique:true, blank:false) 
-        password(size:6..8,blank:false) 
-		emailAddress(blank:false)
+		name(unique:true, blank:false)
+		username(size:6..10,unique:true, blank:false) 
+        password(size:6..10,blank:false) 
+		emailAddress(unique:true, blank:false)
 }
 }
