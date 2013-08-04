@@ -10,10 +10,7 @@
 		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="${resource(dir: 'themes/images', file: 'shopping_cart_red.png')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'docs.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'docs.css')}" type="text/css">
+		
 		
 		<g:layoutHead/>
 		<r:layoutResources />
@@ -30,7 +27,7 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li><a href="checkout.html">Login</a></li>					
+							<li><<g:link controller="account" action="login">Login</a></g:link></li>					
 							<li><g:link controller="account" action="create">Register</g:link></li>		
 						</ul>
 					</div>
