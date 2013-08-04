@@ -18,6 +18,35 @@ class AccountController {
     def create() {
         [accountInstance: new Account(params)]
     }
+	
+	def login = {
+		if (request.method == "GET") {
+			session.username = null
+			def account = new Account()
+		}
+		else {
+		
+		def account = Account.findByUsernameAndPassword(params.username,params.password)
+		if (account) {
+			session.username = account.username
+			//redirect(controller:'room')
+			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad']
+			redirect(redirectParams)
+		}
+
+		else {
+		flash['message'] = 'Please enter a valid username and password'
+		}
+
+	}
+	}
+	
+	def logout = {
+		session.username = null
+		flash.message = 'Successfully logged out'
+		redirect(controller:'postad', action:'postad')
+	}
+
 
     def save() {
         def accountInstance = new Account(params)
@@ -29,7 +58,7 @@ class AccountController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
         redirect(action: "welcome", id: accountInstance.id)
     }
-
+	
     def welcome(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
