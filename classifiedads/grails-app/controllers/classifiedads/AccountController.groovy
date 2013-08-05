@@ -34,7 +34,7 @@ class AccountController {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "welcome")
+            redirect(action: "list")
             return
         }
 
