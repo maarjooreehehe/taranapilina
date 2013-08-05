@@ -18,6 +18,39 @@ class AccountController {
     def create() {
         [accountInstance: new Account(params)]
     }
+
+    def save() {
+        def accountInstance = new Account(params)
+        if (!accountInstance.save(flush: true)) {
+            render(view: "create", model: [accountInstance: accountInstance])
+            return
+        }
+
+        flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
+        redirect(action: "welcome", id: accountInstance.id)
+    }
+
+    def welcome(Long id) {
+        def accountInstance = Account.get(id)
+        if (!accountInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
+            redirect(action: "list")
+            return
+        }
+
+        [accountInstance: accountInstance]
+    }
+
+	def show(Long id) {
+        def accountInstance = Account.get(id)
+        if (!accountInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
+            redirect(action: "list")
+            return
+        }
+
+        [accountInstance: accountInstance]
+    }
 	
 	def login = {
 		if (request.method == "GET") {
@@ -44,42 +77,9 @@ class AccountController {
 	def logout = {
 		session.username = null
 		flash.message = 'Successfully logged out'
-		redirect(controller:'postad', action:'postad')
-	}
-
-
-    def save() {
-        def accountInstance = new Account(params)
-        if (!accountInstance.save(flush: true)) {
-            render(view: "create", model: [accountInstance: accountInstance])
-            return
-        }
-
-        flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
-        redirect(action: "welcome", id: accountInstance.id)
-    }
+		redirect(controller:'postad', action:'')
+	}	
 	
-    def welcome(Long id) {
-        def accountInstance = Account.get(id)
-        if (!accountInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "list")
-            return
-        }
-
-        [accountInstance: accountInstance]
-    }
-
-	def show(Long id) {
-        def accountInstance = Account.get(id)
-        if (!accountInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "list")
-            return
-        }
-
-        [accountInstance: accountInstance]
-    }
     def edit(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
@@ -138,4 +138,5 @@ class AccountController {
             redirect(action: "show", id: id)
         }
     }
+	
 }
