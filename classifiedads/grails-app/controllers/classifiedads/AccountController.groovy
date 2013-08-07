@@ -62,7 +62,6 @@ class AccountController {
 		def account = Account.findByUsernameAndPassword(params.username,params.password)
 		if (account) {
 			session.username = account.username
-			//redirect(controller:'room')
 			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad']
 			redirect(redirectParams)
 		}
@@ -77,7 +76,7 @@ class AccountController {
 	def logout = {
 		session.username = null
 		flash.message = 'Successfully logged out'
-		redirect(controller:'postad', action:'')
+		redirect(controller:'postad', action:'list')
 	}	
 	
     def edit(Long id) {
