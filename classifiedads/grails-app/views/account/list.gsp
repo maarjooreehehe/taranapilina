@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="name" title="${message(code: 'account.name.label', default: 'Name:')}" />
+						<g:sortableColumn property="name" title="${message(code: 'account.name.label', default: 'Name')}" />
 					
-						<g:sortableColumn property="username" title="${message(code: 'account.username.label', default: 'Username:')}" />
+						<g:sortableColumn property="username" title="${message(code: 'account.username.label', default: 'Username')}" />
 					
-						<g:sortableColumn property="password" title="${message(code: 'account.password.label', default: 'Password:')}" />
+						<g:sortableColumn property="password" title="${message(code: 'account.password.label', default: 'Password')}" />
 					
-						
+						<g:sortableColumn property="emailAddress" title="${message(code: 'account.emailAddress.label', default: 'Email Address')}" />
 					
-						<g:sortableColumn property="emailAddress" title="${message(code: 'account.emailAddress.label', default: 'Email Address:')}" />
+						<g:sortableColumn property="address" title="${message(code: 'account.address.label', default: 'Address')}" />
 					
-						
+						<g:sortableColumn property="dateCreated" title="${message(code: 'account.dateCreated.label', default: 'Date Created')}" />
 					
 					</tr>
 				</thead>
@@ -50,9 +50,9 @@
 					
 						<td>${fieldValue(bean: accountInstance, field: "emailAddress")}</td>
 					
-						
+						<td>${fieldValue(bean: accountInstance, field: "address")}</td>
 					
-						
+						<td><g:formatDate date="${accountInstance.dateCreated}" /></td>
 					
 					</tr>
 				</g:each>
