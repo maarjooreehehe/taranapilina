@@ -11,7 +11,7 @@ class Account {
 		Date lastUpdated
 	
     static constraints = {
-		name (unique:false, blank:false)
+		name (blank:false)
 		username (size:6..10, unique:true, blank:false) 
         password (size:6..10, blank:false) 
 		emailAddress (unique:true, blank:false)

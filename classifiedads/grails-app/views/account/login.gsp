@@ -51,7 +51,7 @@
 								</td>
 								</br>
 								<td valign='top' class='value '>
-									<input type="text" maxlength='8' name='username' value='${account?.username}' placeholder="Enter your username"></input>
+									<input type="text" maxlength='10' name='username' value='${account?.username}' placeholder="Enter your username"></input>
 								</td>
 							</tr>
 							<tr class='prop'>
@@ -59,7 +59,7 @@
 								<center><label for='password'>Password: </label></center>
 								</td>
 								<td valign='top' class='value '>
-									<input type="password" maxlength='8' name='password' value='${account?.password}' placeholder="Enter your password" ></input>
+									<input type="password" maxlength='10' name='password' value='${account?.password}' placeholder="Enter your password" ></input>
 								
 								</td>
 							</tr>
