@@ -104,27 +104,27 @@ class AccountController {
 		if (request.method == "GET") {
 			session.username = null
 			def account = new Account()
-			
 		}
 		else {
-			
-			def account = Account.findByUsernameAndPassword(params.username,params.password)
-			if (account) {
-				session.username = account.username
-				def redirectParams = session.originalRequestParams?session.originalRequestParams:[controller:'postad']
-				redirect(redirectParams)
-			}
-
-			else {
-			flash['message'] = 'Please enter a valid username and password'
-			}
-
+		
+		def account = Account.findByUsernameAndPassword(params.username,params.password)
+		if (account) {
+			session.username = account.username
+			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad']
+			redirect(redirectParams)
 		}
+
+		else {
+		flash['message'] = 'Please enter a valid username and password'
+		}
+
+	}
 	}
 	
 	def logout = {
 		session.username = null
 		flash.message = 'Successfully logged out'
-		redirect(controller:'account', action:'login')
+		redirect(controller:'postad', action:'list')
 	}	
+	
 }
