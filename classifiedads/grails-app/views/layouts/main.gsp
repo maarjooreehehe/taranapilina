@@ -27,8 +27,9 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li><g:link controller="account" action="logout">Logout</a></g:link></li>					
-							<li><g:link controller="account" action="create">Register</g:link></li>		
+							<li><g:link controller="account" action="logout">Logout</a></g:link></li>	
+							
+						
 						</ul>
 					</div>
 				</div>

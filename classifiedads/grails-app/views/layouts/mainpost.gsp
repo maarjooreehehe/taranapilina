@@ -10,16 +10,12 @@
 		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="${resource(dir: 'themes/images', file: 'shopping_cart_red.png')}" type="image/x-icon">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
 		
 		
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
 	<body>
-	
 	<header class = "jumbotron subhead" id = "overview">
 		<div id="top-bar" class="container">
 			<div class="row">
@@ -31,21 +27,18 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							
-							<li><g:link controller="account" action="create">Register</g:link></li>		
+							<li><g:link controller="account" action="logout">Logout</a></g:link></li>					
+								
 						</ul>
 					</div>
 				</div>
-				
 			</div>
-			
 		</div>
-		
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
 			
-					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="${resource(dir:'themes/images', file:'logo.png')}" ></a>
+					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="../themes/images/logo.png" class="site_logo" alt=""></a>
 					
 					<nav id="menu" class="pull-right">
 						<ul>

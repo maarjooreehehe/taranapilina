@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="main"/>
+		<meta name="layout" content="mainpost"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<meta name="description" content="">
 		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
