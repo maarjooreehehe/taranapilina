@@ -29,36 +29,39 @@
 	<body>
 		<section class="header_text sub">
 			<img class="pageBanner" src="../themes/images/pageBanner.png" alt="New products" >
-			</section>
-		<div class="body">
-		<div align="center">
-			<h2>Please log in to post your ad.</h2>
-		</div>
+			<h4><span>Please log in to post your ad</span></h4>
+		</section>
+		
+		
 				<g:if test="${flash.message}">
-					<div class="message">${flash.message}</div>
+					<center><div class="message">${flash.message}!</div></center>
 				</g:if>
 				<g:hasErrors bean="${race}">
 					<div class="errors">
 					<g:renderErrors bean="${account}" as="list" />
 					</div>
 				</g:hasErrors>
+				
+			
+
 				<g:form controller="account" method="post" >
 					<div class="dialog" align="center">
 						<table>
 							<tr class='prop'>
 								<td valign='top' class='name'>
-								<center><label for='username'>Username: </label></center>
+								
 								</td>
 								</br>
 								<td valign='top' class='value '>
+									<label for='username'>Username: </label>
 									<input type="text" maxlength='10' name='username' value='${account?.username}' placeholder="Enter your username"></input>
 								</td>
 							</tr>
 							<tr class='prop'>
 								<td valign='top' class='name'>
-								<center><label for='password'>Password: </label></center>
 								</td>
 								<td valign='top' class='value '>
+									<label for='password'>Password: </label>
 									<input type="password" maxlength='10' name='password' value='${account?.password}' placeholder="Enter your password" ></input>
 								
 								</td>
@@ -73,7 +76,7 @@
 					</div>
 					
 			</g:form>
-</div>
+
 <section id="footer-bar">
 				<div class="row">
 					<div class="span3">
