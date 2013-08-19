@@ -1,4 +1,3 @@
-
 <%@ page import="classifiedads.Account" %>
 <!DOCTYPE html>
 <html>

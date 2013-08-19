@@ -29,13 +29,14 @@
 	<body>
 		<section class="header_text sub">
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
-			<h4><span>My Account</span></h4>
+			<h4><span>WELCOME, YOU ARE NOW REGISTERED TO TARANAPILINA!</span></h4>
+			
 		</section>
 		<section class="main-content">				
 				<div class="row">				
 					<div class="span5">
 						<div>
-							<h4 class="title"><span class="text"><strong>Account</strong> Details</span></h4>
+							<h4 class="title"><span class="text">Your <strong>Account</strong> Details</span></h4>
 							<div class="dialog" align="left">
 								<table>
 									<g:if test="${accountInstance?.name}">
@@ -79,49 +80,50 @@
 									</g:if>
 								</table>
 							</div>
-							</br>
-							
-							<g:form>
-								<fieldset class="buttons">
-									<g:hiddenField name="id" value="${accountInstance?.id}" />
-									<g:actionSubmit class="delete" action="delete" value="Deactivate Account" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-								</fieldset>
-							</g:form>
 						</div>
 					</div>
 					<div class="span7">					
-						<h4 class="title"><span class="text"><strong>Edit </strong>Account</span></h4>
-						<div id="edit-account" class="content scaffold-edit" role="main">
-							<g:if test="${flash.message}">
-								<div class="message" role="status">Your account is successfully updated!</div>
-								
-							</g:if>
-							
-						
-						<g:hasErrors bean="${accountInstance}">
-							<ul class="errors" role="alert">
-								<g:eachError bean="${accountInstance}" var="error">
-									<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-								</g:eachError>
-							</ul>
-						</g:hasErrors>
-						
-						<g:form method="post" >
-							<g:hiddenField name="id" value="${accountInstance?.id}" />
-							<g:hiddenField name="version" value="${accountInstance?.version}" />
-								<fieldset class="form">
-									<g:render template="formForEdit"/>
-								</fieldset>
-								
-								<fieldset class="buttons">
-									<g:actionSubmit class="save" action="update" input tabindex="9" class="btn btn-inverse large" value="Save Changes" />
-									
-								</fieldset>
-						</g:form>
+						<h4 class="title"><span class="text">Please <strong>log in</strong> to proceed</span></h4>
+				<g:hasErrors bean="${race}">
+					<div class="errors">
+					<g:renderErrors bean="${account}" as="list" />
 					</div>
+				</g:hasErrors>
+				<g:form controller="account" method="post" >
+					<div class="dialog">
+						<table>
+							<tr class='prop'>
+								<td valign='top' class='name'>
+								<label for='username'>Username: </label>
+								</td>
+								</br>
+								<td valign='top' class='value '>
+									<input type="text" maxlength='10' name='username' value='${account?.username}' placeholder="Enter your username"></input>
+								</td>
+							</tr>
+							<tr class='prop'>
+								<td valign='top' class='name'>
+								<label for='password'>Password: </label>
+								</td>
+								<td valign='top' class='value '>
+									<input type="password" maxlength='10' name='password' value='${account?.password}' placeholder="Enter your password" ></input>
+								
+								</td>
+							</tr>
+						</table>
 					</div>
-				</div>
-		</section>
+
+					<div class="buttons">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span class="button">
+							<g:actionSubmit value="Log in" input tabindex="5" class="btn btn-inverse large"  />
+						</span>
+					</div>
+					
+			</g:form>
+</div>
+						
+</div>						
 	
 		<section id="footer-bar">
 				<div class="row">

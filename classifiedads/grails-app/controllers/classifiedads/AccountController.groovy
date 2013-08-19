@@ -19,7 +19,7 @@ class AccountController {
         [accountInstance: new Account(params)]
     }
 
-    def save() {
+	def save() {
         def accountInstance = new Account(params)
         if (!accountInstance.save(flush: true)) {
             render(view: "create", model: [accountInstance: accountInstance])
@@ -27,7 +27,7 @@ class AccountController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
-        redirect(action: "welcome", id: accountInstance.id)
+        redirect(action: "afterreg", id: accountInstance.id)
     }
 
 	 def welcome(Long id) {
@@ -52,6 +52,16 @@ class AccountController {
         [accountInstance: accountInstance]
     }
 
+	 def afterreg(Long id) {
+        def accountInstance = Account.get(id)
+        if (!accountInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
+            redirect(action: "list")
+            return
+        }
+
+        [accountInstance: accountInstance]
+    }
     def edit(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
@@ -95,19 +105,19 @@ class AccountController {
     def delete(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "list")
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Postad'), id])
+            redirect(controller:'postad', action:'list')
             return
         }
 
         try {
             accountInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "list")
+            flash.message = message(code: 'default.deleted.message', args: [message(code: 'account.label', default: 'Postad'), id])
+            redirect(controller:'postad', action:'list')
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "show", id: id)
+            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'account.label', default: 'Postad'), id])
+            redirect(controller:'postad', action: 'list', id: id)
         }
     }
 	
