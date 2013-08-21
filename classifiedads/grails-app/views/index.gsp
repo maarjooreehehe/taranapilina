@@ -160,6 +160,7 @@
 		</script>
 		</g:if>
 		<g:else>
+		
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
