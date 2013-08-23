@@ -27,19 +27,15 @@
 		<![endif]-->
 	</head>
 	<body>
-		
-		
 		<section class="header_text sub">
 			<img class="pageBanner" src="../themes/images/pageBanner.png" alt="New products" >
-			</section>		
+			<h4><span>Post a Free Ad</span></h4>
+		</section>		
 			
 			<section class="main-content">				
 				<div class="row">
 					<div class="span12">					
-						<h3><p>Welcome!</p></h3>
-						<center><h4 class="title"><span class="text"><strong>Post</strong> Free Ad</span></h4></center>
 						
-						<p>Get started by posting your ad below. Type in what best describes your item or service and you're on your way!</p>
 						<form action="save" method="post" class="form-stacked">
 							<fieldset>
 								<div id="create-postad" class="content scaffold-create" role="main">
@@ -53,19 +49,61 @@
 											</g:eachError>
 										</ul>
 									</g:hasErrors>
-									<g:form action="save"  enctype="multipart/form-data">
-										<fieldset class="form">
-											<g:render template="form"/>
-										</fieldset>
-										
-										<fieldset class="buttons">
-											<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-										</fieldset>
-									</g:form>
-								</div>
+								<g:form action="save"  enctype="multipart/form-data">
+									<div class="accordion" id="accordion2">
+										<div class="accordion-group">
+											<div class="accordion-heading">
+												<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Required Information</a>
+											</div>
+											<div id="collapseOne" class="accordion-body in collapse">
+												<div class="accordion-inner">
+													<div class="row-fluid">
+														<div class="span6">
+															<h4>Create New Ad</h4>
+															<p>Get started by posting your ad below. Type in what best describes your item or service and you're on your way!</p>
+																<fieldset class="form">
+																	<g:render template="form"/>
+																</fieldset>
+														</div>
+														<div class="span6">
+															<h4>Ad Description</h4>
+															<p>Providing a relevant text description will give your advertisement a higher ranking in our search results.</p>
+																<fieldset class="form">
+																	<g:render template="formForDescription"/>
+																</fieldset>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="accordion-group">
+											<div class="accordion-heading">
+												<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Other Ad Information</a>
+											</div>
+											<div id="collapseTwo" class="accordion-body collapse">
+												<div class="accordion-inner">
+													<div class="row-fluid">
+														<div class="span6">
+															<fieldset class="form">
+																<g:render template="formForOptionalInformation"/>
+															</fieldset>
+															
+															<fieldset class="buttons">
+																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
+															</fieldset>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									
+								</g:form>									
+									
 							</fieldset>
 						</form>					
-					</div>				
+									
 				</div>
 			</section>	
 			<section id="footer-bar">

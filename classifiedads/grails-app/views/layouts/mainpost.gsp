@@ -27,8 +27,9 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
+							<li>Hello ${session.username}!</li>
+							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>					
-								
 						</ul>
 					</div>
 				</div>
@@ -42,6 +43,7 @@
 					
 					<nav id="menu" class="pull-right">
 						<ul>
+							<li><g:link controller="postad" action="list">View All Ads</g:link></li>
 							<li><a href="#">Categories</a>
 								<ul>									
 									<li><a href="#">Real State</a></li>

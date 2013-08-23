@@ -25,7 +25,16 @@
 					<tr>
 					
 						<g:sortableColumn property="adname" title="${message(code: 'postad.adname.label', default: 'Adname')}" />
-				
+					
+						<g:sortableColumn property="picture" title="${message(code: 'postad.picture.label', default: 'Picture')}" />
+					
+						<g:sortableColumn property="pictureType" title="${message(code: 'postad.pictureType.label', default: 'Picture Type')}" />
+					
+						<g:sortableColumn property="price" title="${message(code: 'postad.price.label', default: 'Price')}" />
+					
+						<g:sortableColumn property="location" title="${message(code: 'postad.location.label', default: 'Location')}" />
+					
+						<g:sortableColumn property="contactNo" title="${message(code: 'postad.contactNo.label', default: 'Contact No')}" />
 					
 					</tr>
 				</thead>
@@ -35,7 +44,15 @@
 					
 						<td><g:link action="show" id="${postadInstance.id}">${fieldValue(bean: postadInstance, field: "adname")}</g:link></td>
 					
-						
+						<td>${fieldValue(bean: postadInstance, field: "picture")}</td>
+					
+						<td>${fieldValue(bean: postadInstance, field: "pictureType")}</td>
+					
+						<td>${fieldValue(bean: postadInstance, field: "price")}</td>
+					
+						<td>${fieldValue(bean: postadInstance, field: "location")}</td>
+					
+						<td>${fieldValue(bean: postadInstance, field: "contactNo")}</td>
 					
 					</tr>
 				</g:each>
