@@ -7,8 +7,8 @@
 		<g:set var="entityName" value="${message(code: 'postad.label', default: 'Postad')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 		<link href="../bootstrap/css/bootstrap-description.css" rel="stylesheet"/>
-		
 	</head>
+	
 	<body>
 		<a href="#show-postad" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
@@ -103,7 +103,8 @@
 					
 				</li>
 				</g:if>
-			
+				
+				
 				<g:if test="${postadInstance?.lastUpdated}">
 				<li class="fieldcontain">
 					<span id="lastUpdated-label" class="property-label"><g:message code="postad.lastUpdated.label" default="Last Updated" /></span>
@@ -112,16 +113,16 @@
 					
 				</li>
 				</g:if>
-			
+				
+				
 				<g:if test="${postadInstance?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="postad.description.label" default="Description" /></span>
 					
-						<span class="property-value" aria-labelledby="description-label"><p class="entry"><g:fieldValue bean="${postadInstance}" field="description"/></p></span>
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${postadInstance}" field="description"/></span>
 					
 				</li>
 				</g:if>
-			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

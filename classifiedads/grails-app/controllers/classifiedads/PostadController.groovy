@@ -3,9 +3,9 @@ package classifiedads
 import org.springframework.dao.DataIntegrityViolationException
 
 class PostadController extends BaseController {
-
+	
 	def beforeInterceptor = [action:this.&auth,except:['list']]
-
+	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
