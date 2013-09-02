@@ -1,3 +1,4 @@
+<%@ page import="classifiedads.Account" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -168,10 +169,12 @@
 						<input type="text" class="input-block-level search-query" Placeholder="QWERTY">
 					</form>
 				</div>
+				
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">
-							<li>Hello ${session.username}!</li>
+							<g:hiddenField name="id" value="${accountInstance?.id}" />
+							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">Hello ${session.username}!</g:link></li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>

@@ -132,7 +132,7 @@ class AccountController {
 		if (account) {
 			session.username = account.username
 			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad']
-			redirect(redirectParams)
+			redirect(controller:'postad', action:'create')
 		}
 
 		else {
