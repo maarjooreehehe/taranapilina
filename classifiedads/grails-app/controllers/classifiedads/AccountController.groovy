@@ -1,5 +1,5 @@
 package classifiedads
-
+import grails.plugin.asyncmail.AsynchronousMailService
 import org.springframework.dao.DataIntegrityViolationException
 
 class AccountController {
@@ -19,12 +19,19 @@ class AccountController {
         [accountInstance: new Account(params)]
     }
 
+	def asyncMailService
 	def save() {
         def accountInstance = new Account(params)
         if (!accountInstance.save(flush: true)) {
             render(view: "create", model: [accountInstance: accountInstance])
             return
         }
+		asyncMailService.sendMail{
+		
+					to "ivymay.bulala@gmail.com"
+					subject "Account"
+					body "Welcome to our website, you can now log in"
+					}
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
         redirect(action: "afterreg", id: accountInstance.id)
