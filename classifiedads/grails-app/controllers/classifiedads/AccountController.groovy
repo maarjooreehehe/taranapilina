@@ -28,7 +28,7 @@ class AccountController {
         }
 		asyncMailService.sendMail{
 		
-					to "ivymay.bulala@gmail.com"
+					to "${complaintInstance.emailAddress}"
 					subject "Account"
 					body "Welcome to our website, you can now log in"
 					}
