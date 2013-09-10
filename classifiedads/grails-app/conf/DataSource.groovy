@@ -1,8 +1,8 @@
 dataSource {
     pooled = true
     driverClassName = "org.postgresql.Driver"
-    username = "postgres"
-    password = "naruto143"
+    username = "ashleimarjoree"
+    password = "kisses13"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -16,8 +16,8 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:postgresql://localhost/ads"
 			driverClassName = "org.postgresql.Driver"
-			username = "postgres"
-			password = "naruto143"
+			username = "ashleimarjoree"
+			password = "kisses13"
         }
     }
     test {
@@ -25,17 +25,17 @@ environments {
             dbCreate = "update"
             url = "jdbc:postgresql://localhost/ads"
 			driverClassName = "org.postgresql.Driver"
-			username = "postgres"
-			password = "naruto143"
-        }
+			username = "ashleimarjoree"
+			password = "kisses13"
+			}
     }
     production {
         dataSource {
             dbCreate = "update"
             url = "jdbc:postgresql://localhost/ads"
 			driverClassName = "org.postgresql.Driver"
-			username = "postgres"
-			password = "naruto143"
+			username = "ashleimarjoree"
+			password = "kisses13"
             pooled = true
             properties {
                maxActive = -1

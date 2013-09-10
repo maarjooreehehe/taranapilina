@@ -14,7 +14,7 @@ class Account {
 		name (blank:false)
 		username (size:6..10, unique:true, blank:false) 
         password (size:6..10, blank:false) 
-		emailAddress (unique:true, blank:false)
+		emailAddress (email:true, unique:true, blank:false)
 		address(blank:false)
 		dateCreated()
 		lastUpdated()

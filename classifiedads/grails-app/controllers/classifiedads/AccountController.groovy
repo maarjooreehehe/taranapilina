@@ -36,8 +36,8 @@ class AccountController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
         redirect(action: "afterreg", id: accountInstance.id)
     }
-
-	 def welcome(Long id) {
+	
+	def welcome(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
@@ -59,7 +59,7 @@ class AccountController {
         [accountInstance: accountInstance]
     }
 
-	 def afterreg(Long id) {
+	def afterreg(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
@@ -69,6 +69,7 @@ class AccountController {
 
         [accountInstance: accountInstance]
     }
+	
     def edit(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
@@ -112,19 +113,19 @@ class AccountController {
     def delete(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Postad'), id])
-            redirect(controller:'postad', action:'list')
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
+            redirect(action: "list")
             return
         }
 
         try {
             accountInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'account.label', default: 'Postad'), id])
-            redirect(controller:'postad', action:'list')
+            flash.message = message(code: 'default.deleted.message', args: [message(code: 'account.label', default: 'Account'), id])
+            redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'account.label', default: 'Postad'), id])
-            redirect(controller:'postad', action: 'list', id: id)
+            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'account.label', default: 'Account'), id])
+            redirect(action: "show", id: id)
         }
     }
 	
@@ -138,8 +139,8 @@ class AccountController {
 		def account = Account.findByUsernameAndPassword(params.username,params.password)
 		if (account) {
 			session.username = account.username
-			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad']
-			redirect(controller:'postad', action:'create')
+			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad', action:"create", id: account.getId()]
+			redirect(redirectParams)
 		}
 
 		else {
@@ -153,6 +154,5 @@ class AccountController {
 		session.username = null
 		flash.message = 'Successfully logged out'
 		redirect(controller:'postad', action:'list')
-	}	
-	
+	}
 }

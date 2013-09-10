@@ -44,8 +44,16 @@
 										<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="name"/></span>
 									</g:if>
 									</br>
-									
-									
+									<g:if test="${accountInstance?.username}">
+										<strong>Username: &nbsp;</strong>
+										<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="username"/></span>
+									</g:if>
+									</br>
+									<g:if test="${accountInstance?.password}">
+										<strong>Password: &nbsp;</strong>
+										<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="password"/></span>
+									</g:if>
+									</br>
 									
 								</table>
 							</div>
