@@ -32,6 +32,7 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+							<li><g:link controller="account" action="login">Login</a></g:link></li>
 						</ul>
 					</div>
 				</div>

@@ -31,8 +31,8 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							
-							<li><g:link controller="account" action="create">REGISTER</g:link></li>		
+							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+							<li><g:link controller="account" action="create">Register</g:link></li>		
 						</ul>
 					</div>
 				</div>
