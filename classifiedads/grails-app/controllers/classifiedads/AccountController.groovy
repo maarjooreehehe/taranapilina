@@ -139,7 +139,7 @@ class AccountController {
 		def account = Account.findByUsernameAndPassword(params.username,params.password)
 		if (account) {
 			session.username = account.username
-			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad', action:"create", id: account.getId()]
+			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad', action:"create"]
 			redirect(redirectParams)
 		}
 
