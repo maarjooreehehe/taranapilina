@@ -133,6 +133,50 @@
 									<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 								</fieldset>
 							</g:form>
+		
+		<section id="footer-bar">
+				<div class="row">
+					<div class="span3">
+						<h4>Navigation</h4>
+						<ul class="nav">
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
+							
+							<li><a href="./about.html">About Us</a></li>
+							<li><a href="./contact.html">Contac Us</a></li>
+							<li><a href="./cart.html">Your Cart</a></li>
+							<li><a href="./register.html">Login</a></li>							
+						</ul>					
+					</div>
+					<div class="span4">
+						<h4>My Account</h4>
+						<ul class="nav">
+							
+							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">My Account</g:link></li>
+							<li><a href="./list.html">Order History</a></li>
+							<li><a href="#">Wish List</a></li>
+							<li><a href="#">Newsletter</a></li>
+						</ul>
+					</div>
+					<div class="span5">
+						<p class="logo"><img src="../themes/images/logo.png" class="site_logo" alt=""></p>
+						<p>Buy and Sell in the Philippines. Easy. Simple. Free. Try it today!</p>
+						<br/>
+					</div>					
+				</div>	
+			</section>
+		
+			<section id="copyright">
+				<span>Copyright 2013 One Shoppe  All right reserved.</span>
+			</section>
 		</div>
+		<script src="../themes/js/common.js"></script>
+		<script src="../themes/js/jquery.flexslider-min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#checkout').click(function (e) {
+					document.location.href = "checkout.html";
+				})
+			});
+		</script>
 	</body>
 </html>
