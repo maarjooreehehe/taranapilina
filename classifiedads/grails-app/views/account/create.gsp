@@ -73,7 +73,8 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="./index.html">Homepage</a></li>  
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
+							
 							<li><a href="./about.html">About Us</a></li>
 							<li><a href="./contact.html">Contact Us</a></li>						
 						</ul>					

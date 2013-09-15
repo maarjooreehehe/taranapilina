@@ -113,7 +113,8 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="./index.html">Homepage</a></li>  
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
+							
 							<li><a href="./about.html">About Us</a></li>
 							<li><a href="./contact.html">Contac Us</a></li>
 							<li><a href="./cart.html">Your Cart</a></li>
@@ -123,8 +124,9 @@
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Order History</a></li>
+							
+							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">My Account</g:link></li>
+							<li><a href="./list.html">Order History</a></li>
 							<li><a href="#">Wish List</a></li>
 							<li><a href="#">Newsletter</a></li>
 						</ul>

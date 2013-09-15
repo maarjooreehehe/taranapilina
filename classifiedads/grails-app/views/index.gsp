@@ -126,7 +126,8 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a class="home" href="${createLink(uri: '/')}">Homepage</a></li>  
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
+							
 							<li><a href="./about.html">About Us</a></li>
 						</ul>					
 					</div>
@@ -264,15 +265,17 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a class="home" href="${createLink(uri: '/')}">Homepage</a></li>  
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
+							
 							<li><a href="./about.html">About Us</a></li>
 						</ul>					
 					</div>
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><a href="#">Account Details</a></li>
-							<li><a href="#">My Posted Ads</a></li>
+							
+							<li><a href="./account/index.html">Account Details</a></li>
+							<li><a href="./postad/list">My Posted Ads</a></li>
 						</ul>
 					</div>
 					<div class="span5">
