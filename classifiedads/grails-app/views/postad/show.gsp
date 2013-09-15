@@ -128,8 +128,9 @@
 								<fieldset class="buttons">
 								
 									<g:hiddenField name="id" value="${postadInstance?.id}" />
-									<g:link class="edit" action="edit" id="${postadInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-									<g:actionSubmit class="delete" action="delete" value="Delete Ad" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+									<g:actionSubmit class="Edit" action="edit" value="Edit" input tabindex="9" class="btn btn-inverse large" />
+									
+									<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 								</fieldset>
 							</g:form>
 		</div>
