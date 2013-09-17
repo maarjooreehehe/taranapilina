@@ -13,6 +13,7 @@ class Postad {
 	Date dateCreated
 	Date lastUpdated
 	String description
+
 	
     static constraints = {
 	adname(blank:false)

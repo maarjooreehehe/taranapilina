@@ -29,99 +29,13 @@
 	<body>
 		<section class="header_text sub">
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
-			<h4><span>WELCOME, YOU ARE NOW REGISTERED TO TARANAPILINA!</span></h4>
+			<h4><span>WELCOME, Check your email for confirmation!</span></h4>
 			
 		</section>
-		<section class="main-content">				
-				<div class="row">				
-					<div class="span5">
-						<div>
-							<h4 class="title"><span class="text">Your <strong>Account</strong> Details</span></h4>
-							<div class="dialog" align="left">
-								<table>
-									<g:if test="${accountInstance?.name}">
-										<strong>Name: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="name"/></span>
-									</g:if>
-									</br>
-									<g:if test="${accountInstance?.username}">
-										<strong>Username: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="username"/></span>
-									</g:if>
-									</br>
-									<g:if test="${accountInstance?.password}">
-										<strong>Password: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="password"/></span>
-									</g:if>
-									</br>
-									
-								</table>
-							</div>
-							<h5>OTHER INFORMATION</h5>
-							<div class="dialog" align="left">
-								<table>
-									<g:if test="${accountInstance?.emailAddress}">
-										<strong>Email Address: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="emailAddress-label"><g:fieldValue bean="${accountInstance}" field="emailAddress"/></span>
-									</g:if>
-									</br>
-									
-									<g:if test="${accountInstance?.address}">
-										<strong>Address: &nbsp;</strong>					
-										<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${accountInstance}" field="address"/></span>
-									</g:if>
-									</br>
-									
-									<g:if test="${accountInstance?.dateCreated}">
-										<strong>Date Registered: &nbsp;</strong>					
-										<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${accountInstance?.dateCreated}" type="date" style="LONG" /></span>
-									</g:if>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="span7">					
-						<h4 class="title"><span class="text">Please <strong>log in</strong> to proceed</span></h4>
-				<g:hasErrors bean="${race}">
-					<div class="errors">
-					<g:renderErrors bean="${account}" as="list" />
-					</div>
-				</g:hasErrors>
-				<g:form controller="account" method="post" >
-					<div class="dialog">
-						<table>
-							<tr class='prop'>
-								<td valign='top' class='name'>
-								<label for='username'>Username: </label>
-								</td>
-								</br>
-								<td valign='top' class='value '>
-									<input type="text" maxlength='10' name='username' value='${account?.username}' placeholder="Enter your username"></input>
-								</td>
-							</tr>
-							<tr class='prop'>
-								<td valign='top' class='name'>
-								<label for='password'>Password: </label>
-								</td>
-								<td valign='top' class='value '>
-									<input type="password" maxlength='10' name='password' value='${account?.password}' placeholder="Enter your password" ></input>
-								
-								</td>
-							</tr>
-						</table>
-					</div>
+		
 
-					<div class="buttons">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<span class="button">
-							<g:actionSubmit value="Log in" input tabindex="5" class="btn btn-inverse large"  />
-						</span>
-					</div>
 					
-			</g:form>
-</div>
-						
-</div>						
+										
 	
 		<section id="footer-bar">
 				<div class="row">

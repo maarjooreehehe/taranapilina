@@ -29,8 +29,8 @@ class AccountController {
 		asyncMailService.sendMail{
 		
 					to "${accountInstance.emailAddress}"
-					subject "Account"
-					body "Welcome to our website, you can now log in now at http://localhost:8080/classifiedads/account/login"
+					subject "Taranapilina Registration"
+					body "Welcome to our website, you can now log in at http://localhost:8080/classifiedads/account/login"
 					}
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])

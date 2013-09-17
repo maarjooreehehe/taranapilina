@@ -2,10 +2,10 @@
 <%@ page import="classifiedads.Account" %>
 <!DOCTYPE html>
 <html>
-	<head>
+	
 		<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="mainmain"/>
+		<meta name="layout" content="mainmain">
 		<title>Post and Shoppe 'til you drop!</title>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
@@ -27,108 +27,112 @@
 		<![endif]-->
 	</head>
 	<body>
-		<section class="header_text sub">
+	<section class="header_text sub">
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
-			<h4><span>My Account</span></h4>
+		
 		</section>
-		<section class="main-content">				
-				<div class="row">				
-					<div class="span5">
-						<div>
-							<h4 class="title"><span class="text"><strong>Account</strong> Details</span></h4>
-							<div class="dialog" align="left">
-								<table>
-									<g:if test="${accountInstance?.name}">
-										<strong>Name: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="name"/></span>
-									</g:if>
-									</br>
-									
-									<g:if test="${accountInstance?.username}">
-										<strong>Username: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${accountInstance}" field="username"/></span>
-									</g:if>
-									
-									</br>
-									<g:if test="${accountInstance?.password}">
-										<strong>Password: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${accountInstance}" field="password"/></span>
-										
-									</g:if>
-									
-								</table>
-							</div>
-							<h5>OTHER INFORMATION</h5>
-							<div class="dialog" align="left">
-								<table>
-									<g:if test="${accountInstance?.emailAddress}">
-										<strong>Email Address: &nbsp;</strong>
-										<span class="property-value" aria-labelledby="emailAddress-label"><g:fieldValue bean="${accountInstance}" field="emailAddress"/></span>
-									</g:if>
-									</br>
-									
-									<g:if test="${accountInstance?.address}">
-										<strong>Address: &nbsp;</strong>					
-										<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${accountInstance}" field="address"/></span>
-									</g:if>
-									</br>
-									
-									<g:if test="${accountInstance?.dateCreated}">
-										<strong>Date Registered: &nbsp;</strong>					
-										<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${accountInstance?.dateCreated}" type="date" style="LONG" /></span>
-									</g:if>
-								</table>
-							</div>
-							</br>
-							
-							<g:form>
-								<fieldset class="buttons">
-									<g:hiddenField name="id" value="${accountInstance?.id}" />
-									<g:actionSubmit class="delete" action="delete" value="Deactivate Account" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-								</fieldset>
-							</g:form>
-						</div>
-					</div>
-					<div class="span7">					
-						<h4 class="title"><span class="text"><strong>Edit </strong>Account</span></h4>
-						<div id="edit-account" class="content scaffold-edit" role="main">
-							<g:if test="${flash.message}">
-								<div class="message" role="status">Your account is successfully updated!</div>
-								
-							</g:if>
-							
-						
-						<g:hasErrors bean="${accountInstance}">
-							<ul class="errors" role="alert">
-								<g:eachError bean="${accountInstance}" var="error">
-									<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-								</g:eachError>
-							</ul>
-						</g:hasErrors>
-						
-						<g:form method="post" >
-							<g:hiddenField name="id" value="${accountInstance?.id}" />
-							<g:hiddenField name="version" value="${accountInstance?.version}" />
-								<fieldset class="form">
-									<g:render template="formForEdit"/>
-								</fieldset>
-								
-								<fieldset class="buttons">
-									<g:actionSubmit class="save" action="update" input tabindex="9" class="btn btn-inverse large" value="Save Changes" />
-									
-								</fieldset>
-						</g:form>
-					</div>
-					</div>
-				</div>
-		</section>
-	
+		
+			
+				<g:if test="${postadInstance?.adname}">
+				<li class="fieldcontain">
+				<strong>Name of the item: &nbsp;</strong>
+				<span class="property-value" aria-labelledby="adname-label"><g:fieldValue bean="${postadInstance}" field="adname"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.picture}">
+				<li class="fieldcontain">
+					<span id="picture-label" class="property-label"><g:message code="postad.picture.label" default="Picture" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.pictureType}">
+				<li class="fieldcontain">
+					<span id="pictureType-label" class="property-label"><g:message code="postad.pictureType.label" default="Picture Type" /></span>
+					
+						<span class="property-value" aria-labelledby="pictureType-label"><g:fieldValue bean="${postadInstance}" field="pictureType"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.price}">
+				<li class="fieldcontain">
+				<strong>Price: &nbsp;</strong>
+				<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${postadInstance}" field="price"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.location}">
+				<li class="fieldcontain">
+				<strong>Location: &nbsp;</strong>
+				<span class="property-value" aria-labelledby="location-label"><g:fieldValue bean="${postadInstance}" field="location"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.contactNo}">
+				<li class="fieldcontain">
+				<strong>Seller's Contact Number: &nbsp;</strong>	
+				<span class="property-value" aria-labelledby="contactNo-label"><g:fieldValue bean="${postadInstance}" field="contactNo"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.condition}">
+				<li class="fieldcontain">
+				<strong>Condition: &nbsp;</strong>
+				<span class="property-value" aria-labelledby="condition-label"><g:fieldValue bean="${postadInstance}" field="condition"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.category}">
+				<li class="fieldcontain">
+				<strong>Category: &nbsp;</strong>	
+				<span class="property-value" aria-labelledby="category-label"><g:fieldValue bean="${postadInstance}" field="category"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${postadInstance?.dateCreated}">
+				<li class="fieldcontain">
+				<strong>Date Created: &nbsp;</strong>	
+				<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" /></span>
+					
+				</li>
+				</g:if>
+				
+				
+				<g:if test="${postadInstance?.lastUpdated}">
+				<li class="fieldcontain">
+				<strong>Last Updated: &nbsp;</strong>	
+				<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${postadInstance?.lastUpdated}" /></span>
+					</br>
+					</br>
+				</li>
+				</g:if>
+				
+				
+				<g:if test="${postadInstance?.description}">
+				<li class="fieldcontain">
+				<strong>Description: &nbsp;</strong>	
+				<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${postadInstance}" field="description"/></span>
+					
+				</li>
+				</g:if>
+			</ol>
+		
+		
 		<section id="footer-bar">
 				<div class="row">
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li><a href="./index.html">Homepage</a></li>  
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
+							
 							<li><a href="./about.html">About Us</a></li>
 							<li><a href="./contact.html">Contac Us</a></li>
 							<li><a href="./cart.html">Your Cart</a></li>
@@ -138,14 +142,15 @@
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Order History</a></li>
 							
+							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">My Account</g:link></li>
+							<li><a href="./list.html">Order History</a></li>
+							<li><a href="#">Wish List</a></li>
+							<li><a href="#">Newsletter</a></li>
 						</ul>
 					</div>
 					<div class="span5">
-						<p class="logo"><link rel="site_logo" href="${resource(dir: 'themes/images', file: 'logo.png')}" alt=""></p>
-						
+						<p class="logo"><img src="../themes/images/logo.png" class="site_logo" alt=""></p>
 						<p>Buy and Sell in the Philippines. Easy. Simple. Free. Try it today!</p>
 						<br/>
 					</div>					
@@ -165,6 +170,5 @@
 				})
 			});
 		</script>
-	
 	</body>
 </html>
