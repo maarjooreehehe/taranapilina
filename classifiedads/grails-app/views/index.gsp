@@ -266,14 +266,13 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
-							
 							<li><a href="./about.html">About Us</a></li>
 						</ul>					
 					</div>
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							
+							<li><g:link controller="account" action="show">View All Ads</g:link></li>
 							<li><a href="./account/index.html">Account Details</a></li>
 							<li><a href="./postad/list">My Posted Ads</a></li>
 						</ul>

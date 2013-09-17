@@ -118,14 +118,14 @@
 							<li><a href="./about.html">About Us</a></li>
 							<li><a href="./contact.html">Contac Us</a></li>
 							<li><a href="./cart.html">Your Cart</a></li>
-							<li><a href="./register.html">Login</a></li>							
+													
 						</ul>					
 					</div>
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
 							
-							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">My Account</g:link></li>
+							<li><g:link controller="account" class="update" action="edit" id="${accountInstance?.id}">My Account</g:link></li>
 							<li><a href="./list.html">Order History</a></li>
 							<li><a href="#">Wish List</a></li>
 							<li><a href="#">Newsletter</a></li>

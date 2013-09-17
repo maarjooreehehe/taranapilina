@@ -1,9 +1,7 @@
-
 <%@ page import="classifiedads.Account" %>
 <!DOCTYPE html>
 <html>
-	
-		<head>
+	<head>
 		<meta charset="utf-8">
 		<meta name="layout" content="mainmain">
 		<title>Post and Shoppe 'til you drop!</title>
