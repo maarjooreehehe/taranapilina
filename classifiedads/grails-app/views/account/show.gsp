@@ -31,97 +31,74 @@
 		</section>
 		
 			
-				<g:if test="${postadInstance?.adname}">
+				<g:if test="${accountInstance?.name}">
 				<li class="fieldcontain">
-				<strong>Name of the item: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="adname-label"><g:fieldValue bean="${postadInstance}" field="adname"/></span>
+				<strong>Account details: &nbsp;</strong>
+					<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="name"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${postadInstance?.picture}">
+				<g:if test="${accountInstance?.username}">
 				<li class="fieldcontain">
-					<span id="picture-label" class="property-label"><g:message code="postad.picture.label" default="Picture" /></span>
+				<strong>Username: &nbsp;</strong>
+					<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${accountInstance}" field="username"/></span>
+
+				</li>
+				</g:if>
+						
+				<g:if test="${accountInstance?.password}">
+				<li class="fieldcontain">
+				<strong>Password: &nbsp;</strong>
+					<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${accountInstance}" field="password"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${postadInstance?.pictureType}">
+				<g:if test="${accountInstance?.emailAddress}">
 				<li class="fieldcontain">
-					<span id="pictureType-label" class="property-label"><g:message code="postad.pictureType.label" default="Picture Type" /></span>
-					
-						<span class="property-value" aria-labelledby="pictureType-label"><g:fieldValue bean="${postadInstance}" field="pictureType"/></span>
+				<strong>Email Address: &nbsp;</strong>
+				<span class="property-value" aria-labelledby="emailAddress-label"><g:fieldValue bean="${accountInstance}" field="emailAddress"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${postadInstance?.price}">
+				<g:if test="${accountInstance?.address}">
 				<li class="fieldcontain">
-				<strong>Price: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${postadInstance}" field="price"/></span>
+				<strong>Address: &nbsp;</strong>	
+				<span class="property-value" aria-labelledby="address-label"><g:fieldValue bean="${accountInstance}" field="address"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${postadInstance?.location}">
-				<li class="fieldcontain">
-				<strong>Location: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="location-label"><g:fieldValue bean="${postadInstance}" field="location"/></span>
-					
-				</li>
-				</g:if>
 			
-				<g:if test="${postadInstance?.contactNo}">
-				<li class="fieldcontain">
-				<strong>Seller's Contact Number: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="contactNo-label"><g:fieldValue bean="${postadInstance}" field="contactNo"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.condition}">
-				<li class="fieldcontain">
-				<strong>Condition: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="condition-label"><g:fieldValue bean="${postadInstance}" field="condition"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.category}">
-				<li class="fieldcontain">
-				<strong>Category: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="category-label"><g:fieldValue bean="${postadInstance}" field="category"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.dateCreated}">
+				<g:if test="${accountInstance?.dateCreated}">
 				<li class="fieldcontain">
 				<strong>Date Created: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" /></span>
+				<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${accountInstance?.dateCreated}" /></span>
 					
 				</li>
 				</g:if>
 				
 				
-				<g:if test="${postadInstance?.lastUpdated}">
+				<g:if test="${accountInstance?.lastUpdated}">
 				<li class="fieldcontain">
 				<strong>Last Updated: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${postadInstance?.lastUpdated}" /></span>
+				<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${accountInstance?.lastUpdated}" /></span>
 					</br>
 					</br>
 				</li>
 				</g:if>
 				
 				
-				<g:if test="${postadInstance?.description}">
-				<li class="fieldcontain">
-				<strong>Description: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${postadInstance}" field="description"/></span>
-					
-				</li>
-				</g:if>
 			</ol>
+			<g:form>
+				<fieldset class="buttons">
+					<g:hiddenField name="id" value="${accountInstance?.id}" />
+					<g:actionSubmit class="Edit" action="edit" value="Edit" input tabindex="9" class="btn btn-inverse large" />
+					<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+				</fieldset>
+			</g:form>
 		
 		
 		<section id="footer-bar">

@@ -127,7 +127,6 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
-							
 							<li><a href="./about.html">About Us</a></li>
 						</ul>					
 					</div>
@@ -174,8 +173,10 @@
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">
+						
 							<g:hiddenField name="id" value="${accountInstance?.id}" />
-							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">Hello ${session.username}!</g:link></li>
+						
+							<li><g:link controller="account" action="show" id="${accountInstance?.id}">Hello ${session.username}!</g:link></li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>

@@ -114,7 +114,6 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
-							
 							<li><a href="./about.html">About Us</a></li>
 							<li><a href="./contact.html">Contac Us</a></li>
 							<li><a href="./cart.html">Your Cart</a></li>
@@ -124,6 +123,9 @@
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
+							
+							<li><g:link action="edit" id="${accountInstance?.id}">edit</g:link></li>
+							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">Hello ${session.username}!</g:link></li>
 							
 							<li><g:link controller="account" class="update" action="edit" id="${accountInstance?.id}">My Account</g:link></li>
 							<li><a href="./list.html">Order History</a></li>
