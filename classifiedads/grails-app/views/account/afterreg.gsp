@@ -46,7 +46,7 @@
 							<li><a href="./about.html">About Us</a></li>
 							<li><a href="./contact.html">Contac Us</a></li>
 							<li><a href="./cart.html">Your Cart</a></li>
-							<li><a href="./register.html">Login</a></li>							
+							<li><g:link controller="account" action="login">Login</a></g:link></li>
 						</ul>					
 					</div>
 					<div class="span4">

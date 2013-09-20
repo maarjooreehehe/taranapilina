@@ -2,6 +2,7 @@ package classifiedads
 
 class Account {
 
+		Long id
 		String name
 		String username
 		String password
@@ -9,7 +10,7 @@ class Account {
 		String address
 		Date dateCreated
 		Date lastUpdated
-	
+		
     static constraints = {
 		name (blank:false)
 		username (size:6..10, unique:true, blank:false) 
@@ -18,5 +19,6 @@ class Account {
 		address(blank:false)
 		dateCreated()
 		lastUpdated()
+		
 }
 }
