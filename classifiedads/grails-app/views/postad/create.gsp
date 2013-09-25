@@ -124,8 +124,8 @@
 						<h4>My Account</h4>
 						<ul class="nav">
 							
-							
-							<li><g:link controller="account" class="update" action="show" id="${accountInstance?.id}">My Account</g:link></li>
+							<li><g:link controller="account" class="lipsum" action="edit" id="${session.userId}">Edit Account</g:link></li>
+							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account</g:link></li>
 							<li><a href="./list.html">Order History</a></li>
 							<li><a href="#">Wish List</a></li>
 							<li><a href="#">Newsletter</a></li>

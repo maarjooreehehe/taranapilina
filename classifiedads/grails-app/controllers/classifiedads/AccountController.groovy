@@ -58,7 +58,7 @@ class AccountController {
 
         [accountInstance: accountInstance]
     }
-
+	
 	def afterreg(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
@@ -139,6 +139,8 @@ class AccountController {
 		def account = Account.findByUsernameAndPassword(params.username,params.password)
 		if (account) {
 			session.username = account.username
+			session.userId = account.id
+			
 			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad', action:"create"]
 			redirect(redirectParams)
 		}
@@ -152,6 +154,7 @@ class AccountController {
 	
 	def logout = {
 		session.username = null
+		session.userId = null
 		flash.message = 'Successfully logged out'
 		redirect(controller:'postad', action:'list')
 	}
