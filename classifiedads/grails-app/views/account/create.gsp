@@ -75,9 +75,11 @@
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
 							
-							<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contact Us</a></li>						
+							<li><a href="./list.html">View All Ads</a></li>					
 						</ul>					
+					</div>
+					<div class="span4">
+						
 					</div>
 					<div class="span5">
 						<p class="logo"><img src="../themes/images/logo.png" class="site_logo" alt=""></p>

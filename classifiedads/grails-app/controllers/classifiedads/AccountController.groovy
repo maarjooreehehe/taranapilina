@@ -111,10 +111,12 @@ class AccountController {
     }
 
     def delete(Long id) {
+		session.username = null
+		session.userId = null
         def accountInstance = Account.get(id)
         if (!accountInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "list")
+            redirect(action: "index")
             return
         }
 

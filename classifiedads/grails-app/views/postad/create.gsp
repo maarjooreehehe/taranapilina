@@ -114,9 +114,9 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
-							<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contact Us</a></li>
-							<li><a href="./cart.html">Your Cart</a></li>
+							<%--<li><a href="./about.html">About Us</a></li>--%>
+							<%--<li><a href="./contact.html">Contact Us</a></li>--%>
+							<li><a href="./list.html">View All Ads</a></li>
 													
 						</ul>					
 					</div>
@@ -124,11 +124,11 @@
 						<h4>My Account</h4>
 						<ul class="nav">
 							
-							<li><g:link controller="account" class="lipsum" action="edit" id="${session.userId}">Edit Account</g:link></li>
-							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account</g:link></li>
-							<li><a href="./list.html">Order History</a></li>
-							<li><a href="#">Wish List</a></li>
-							<li><a href="#">Newsletter</a></li>
+							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
+							<li><g:link controller="account" class="edit" action="edit" id="${session.userId}">Edit Account Details</g:link></li>
+							<%--<li><a href="./list.html">Order History</a></li>--%>
+							<%--<li><a href="#">Wish List</a></li>--%>
+							<%--<li><a href="#">Newsletter</a></li>--%>
 						</ul>
 					</div>
 					<div class="span5">

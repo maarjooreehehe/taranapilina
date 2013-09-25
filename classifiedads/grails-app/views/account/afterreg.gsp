@@ -5,7 +5,7 @@
 	<head>
 		<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="mainmain"/>
+		<meta name="layout" content="main"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
@@ -43,19 +43,20 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li><a href="./index.html">Homepage</a></li>  
-							<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contac Us</a></li>
-							<li><a href="./cart.html">Your Cart</a></li>
+							<%--<li><a href="./about.html">About Us</a></li>
+							<li><a href="./contact.html">Contact Us</a></li>
+							<li><a href="./cart.html">Your Cart</a></li>--%>
 							<li><g:link controller="account" action="login">Login</a></g:link></li>
+							<li><g:link controller="account" action="create">Register</g:link></li>
 						</ul>					
 					</div>
 					<div class="span4">
-						<h4>My Account</h4>
+						<%--<h4>My Account</h4>
 						<ul class="nav">
 							<li><a href="#">My Account</a></li>
 							<li><a href="#">Order History</a></li>
 							
-						</ul>
+						</ul>--%>
 					</div>
 					<div class="span5">
 						<p class="logo"><link rel="site_logo" href="${resource(dir: 'themes/images', file: 'logo.png')}" alt=""></p>

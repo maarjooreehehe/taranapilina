@@ -29,6 +29,7 @@
 						<ul class="user-menu">				
 							<li>Hello ${session.username}!</li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>					
 						</ul>
 					</div>
