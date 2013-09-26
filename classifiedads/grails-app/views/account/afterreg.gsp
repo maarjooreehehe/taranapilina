@@ -59,7 +59,8 @@
 						</ul>--%>
 					</div>
 					<div class="span5">
-						<p class="logo"><link rel="site_logo" href="${resource(dir: 'themes/images', file: 'logo.png')}" alt=""></p>
+						<p><img class="logo" src="${resource(dir:'themes/images', file: 'logo.png')}" ></p>
+						
 						
 						<p>Buy and Sell in the Philippines. Easy. Simple. Free. Try it today!</p>
 						<br/>

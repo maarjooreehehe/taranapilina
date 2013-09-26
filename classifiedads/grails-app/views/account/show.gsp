@@ -75,7 +75,7 @@
 				<g:if test="${accountInstance?.dateCreated}">
 				<li class="fieldcontain">
 				<strong>Date Created: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${accountInstance?.dateCreated}" /></span>
+				<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${accountInstance?.dateCreated}" type="datetime" style="LONG" timeStyle="SHORT"/></span>
 					
 				</li>
 				</g:if>
@@ -84,7 +84,7 @@
 				<g:if test="${accountInstance?.lastUpdated}">
 				<li class="fieldcontain">
 				<strong>Last Updated: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${accountInstance?.lastUpdated}" /></span>
+				<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${accountInstance?.lastUpdated}" type="datetime" style="LONG" timeStyle="SHORT"/></span>
 					</br>
 					</br>
 				</li>

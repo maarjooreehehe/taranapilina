@@ -41,10 +41,11 @@
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
 			
-					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="../themes/images/logo.png" class="site_logo" alt=""></a>
+					<a href="${createLink(uri: '/')}"><img class="logo pull-left" src="${resource(dir:'themes/images', file: 'logo.png')}" ></a>
 					
 					<nav id="menu" class="pull-right">
 						<ul>
+							<li><g:link controller="postad" action="list">View All Ads</g:link></li>
 							<li><a href="#">Categories</a>
 								<ul>									
 									<li><a href="#">Real State</a></li>
