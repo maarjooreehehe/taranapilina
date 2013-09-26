@@ -16,21 +16,23 @@
 		<r:layoutResources />
 	</head>
 	<body>
+	<g:if test="${!session.username}">
 	<header class = "jumbotron subhead" id = "overview">
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
 					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="QWERTY" class="input-xlarge">
+						<input type="text" class="input-block-level search-query" Placeholder="QWERTY">
 					</form>
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
-							<li>Hello ${session.username}!</li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
-							<li><g:link controller="account" action="logout">Logout</a></g:link></li>					
+							<g:if test="${!session.username}">
+							<li><g:link controller="account" action="login">Login</a></g:link></li>					
+							</g:if>
+							<li><g:link controller="account" action="create">Register</g:link></li>		
 						</ul>
 					</div>
 				</div>
@@ -39,8 +41,9 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-			
-					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="../themes/images/logo.png" class="site_logo" alt=""></a>
+					
+					<a href="${createLink(uri: '/')}"><img class="logo pull-left" src="${resource(dir:'themes/images', file: 'logo.png')}" ></a>
+					
 					
 					<nav id="menu" class="pull-right">
 						<ul>
@@ -85,6 +88,84 @@
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />
+		</g:if>
+		<g:else>
+		<header class = "jumbotron subhead" id = "overview">
+		<div id="top-bar" class="container">
+			<div class="row">
+				<div class="span4">
+					<form method="POST" class="search_form">
+						<input type="text" class="input-block-level search-query" Placeholder="QWERTY">
+					</form>
+				</div>
+				<div class="span8">
+					<div class="account pull-right">
+						<ul class="user-menu">
+						
+							<g:hiddenField name="id" value="${accountInstance?.id}" />
+						
+							<li>Hello ${session.username}!</li>
+							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
+							<li><g:link controller="account" action="logout">Logout</a></g:link></li>
+						</ul>
+						<g:if test="${!session.username}">
+						<li><g:link controller="account" action="login">Login</a></g:link></li>					
+						</g:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="wrapper" class="container">
+			<section class="navbar main-menu">
+				<div class="navbar-inner main-menu">
+					
+					<a href="${createLink(uri: '/')}"><img class="logo pull-left" src="${resource(dir:'themes/images', file: 'logo.png')}" ></a>
+					
+					
+					<nav id="menu" class="pull-right">
+						<ul>
+							<li><g:link controller="postad" action="list">View All Ads</g:link></li>
+							<li><a href="#">Categories</a>
+								<ul>									
+									<li><a href="#">Real State</a></li>
+									<li><a href="#">Phones</a></li>
+									<li><a href="#">Cars and Automotives</a></li>
+								</ul>
+								</li>			
+							<li><a href="#">Location</a>
+								<ul>									
+									<li><a href="#">Manila</a></li>
+									<li><a href="#">CDO</a></li>
+									<li><a href="#">Iligan</a></li>
+								</ul>
+							</li>							
+							<li><a href="#">Price Range</a>
+								<ul>									
+									<li><a href="#">Under P100</a></li>
+									<li><a href="#">P100 to P200</a></li>
+									<li><a href="#">P250 to P500</a></li>
+									<li><a href="#">P500 to P1000</a></li>
+									<li><a href="#">P1000 and above</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Condition</a>
+								<ul>									
+									<li><a href="#">Brand New</a></li>
+									<li><a href="#">Second Hand (Used)</a></li>
+									<li><a href="#">Defective</a></li>
+								</ul>
+							</li>	
+						</ul>
+					</nav>
+				</div>
+			</section>
+			
+		<g:layoutBody/>
 		
+		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+		<g:javascript library="application"/>
+		<r:layoutResources />
+		</g:else>
 	</body>
 </html>

@@ -124,7 +124,8 @@
 						</ul>--%>
 					</div>
 					<div class="span5">
-						<p class="logo"><img src="../themes/images/logo.png" class="site_logo" alt=""></p>
+						<p><img class="logo" src="${resource(dir:'themes/images', file: 'logo.png')}" ></p>
+						
 						<p>Buy and Sell in the Philippines. Easy. Simple. Free. Try it today!</p>
 						<br/>
 					</div>					
