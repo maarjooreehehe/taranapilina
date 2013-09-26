@@ -176,7 +176,7 @@
 						
 							<g:hiddenField name="id" value="${accountInstance?.id}" />
 						
-							<li><g:link controller="account" action="show" id="${accountInstance?.id}">Hello ${session.username}!</g:link></li>
+							<li>Hello ${session.username}!</li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>
@@ -273,8 +273,8 @@
 					<div class="span4">
 						<h4>My Account</h4>
 						<ul class="nav">
-							<li><g:link controller="account" action="show">View All Ads</g:link></li>
-							<li><a href="./account/index.html">Account Details</a></li>
+							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
+							<li><g:link controller="account" class="edit" action="edit" id="${session.userId}">Edit Account Details</g:link></li>
 							<li><a href="./postad/list">My Posted Ads</a></li>
 						</ul>
 					</div>
