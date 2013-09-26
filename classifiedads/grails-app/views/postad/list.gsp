@@ -29,12 +29,7 @@
 	</head>
 	<body>
 		<a href="#list-postad" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create">Create New Ad</g:link></li>
-			</ul>
-		</div>
+		
 		<div id="list-postad" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
@@ -44,17 +39,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="adname" title="${message(code: 'postad.adname.label', default: 'Adname')}" />
+						<g:sortableColumn property="adname" title="${message(code: 'postad.adname.label', default: 'Name of Ad')}" />
 					
 						<g:sortableColumn property="picture" title="${message(code: 'postad.picture.label', default: 'Picture')}" />
 					
-						<g:sortableColumn property="pictureType" title="${message(code: 'postad.pictureType.label', default: 'Picture Type')}" />
+						<g:sortableColumn property="pictureType" title="${message(code: 'postad.pictureType.label', default: 'Type of Picture')}" />
 					
 						<g:sortableColumn property="price" title="${message(code: 'postad.price.label', default: 'Price')}" />
 					
 						<g:sortableColumn property="location" title="${message(code: 'postad.location.label', default: 'Location')}" />
 					
-						<g:sortableColumn property="contactNo" title="${message(code: 'postad.contactNo.label', default: 'Contact No')}" />
+						<g:sortableColumn property="contactNo" title="${message(code: 'postad.contactNo.label', default: 'Contact No of Seller')}" />
 					
 					</tr>
 				</thead>
