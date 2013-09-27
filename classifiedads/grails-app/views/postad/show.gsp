@@ -27,7 +27,7 @@
 	<body>
 	<section class="header_text sub">
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
-			<h4><span>Ad Details</span></h4>
+			<h4><span>Advertisement Details</span></h4>
 		</section>
 		
 			
