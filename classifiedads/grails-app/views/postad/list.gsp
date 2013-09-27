@@ -28,7 +28,7 @@
 
 	</head>
 	<body>
-		<a href="#list-postad" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		
 		
 		<div id="list-postad" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
@@ -49,7 +49,7 @@
 					
 						<g:sortableColumn property="location" title="${message(code: 'postad.location.label', default: 'Location')}" />
 					
-						<g:sortableColumn property="contactNo" title="${message(code: 'postad.contactNo.label', default: 'Contact No of Seller')}" />
+						
 					
 					</tr>
 				</thead>
@@ -57,7 +57,7 @@
 				<g:each in="${postadInstanceList}" status="i" var="postadInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${postadInstance.id}">${fieldValue(bean: postadInstance, field: "adname")}</g:link></td>
+						<td>${fieldValue(bean: postadInstance, field: "adname")}</td>
 					
 						<td>${fieldValue(bean: postadInstance, field: "picture")}</td>
 					
@@ -67,14 +67,17 @@
 					
 						<td>${fieldValue(bean: postadInstance, field: "location")}</td>
 					
-						<td>${fieldValue(bean: postadInstance, field: "contactNo")}</td>
+						<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link></td>
 					
 					</tr>
 				</g:each>
 				</tbody>
+				
 			</table>
 			<div class="pagination">
 				<g:paginate total="${postadInstanceTotal}" />
+				
+				
 			</div>
 		</div>
 	</body>
