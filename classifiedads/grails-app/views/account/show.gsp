@@ -27,13 +27,13 @@
 	<body>
 	<section class="header_text sub">
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
-		
+			<h4><span>My Account Details</span></h4>
 		</section>
 		
 			
 				<g:if test="${accountInstance?.name}">
 				<li class="fieldcontain">
-				<strong>Account details: &nbsp;</strong>
+				<strong>Name: &nbsp;</strong>
 					<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${accountInstance}" field="name"/></span>
 					
 				</li>
