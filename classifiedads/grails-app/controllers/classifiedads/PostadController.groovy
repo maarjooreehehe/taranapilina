@@ -4,7 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class PostadController extends BaseController {
 	
-	def beforeInterceptor = [action:this.&auth,except:['list']]
+	def beforeInterceptor = [action:this.&auth,except:['list', 'show']]
 	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
