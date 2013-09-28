@@ -29,107 +29,85 @@
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
 			<h4><span>Advertisement Details</span></h4>
 		</section>
-		
-			
-				<g:if test="${postadInstance?.adname}">
-				<li class="fieldcontain">
-				<strong>Name of the item: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="adname-label"><g:fieldValue bean="${postadInstance}" field="adname"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.picture}">
-				<li class="fieldcontain">
-					<span id="picture-label" class="property-label"><g:message code="postad.picture.label" default="Picture" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.pictureType}">
-				<li class="fieldcontain">
-					<span id="pictureType-label" class="property-label"><g:message code="postad.pictureType.label" default="Picture Type" /></span>
-					
-						<span class="property-value" aria-labelledby="pictureType-label"><g:fieldValue bean="${postadInstance}" field="pictureType"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.price}">
-				<li class="fieldcontain">
-				<strong>Price: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="price-label"><g:fieldValue bean="${postadInstance}" field="price"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.location}">
-				<li class="fieldcontain">
-				<strong>Location: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="location-label"><g:fieldValue bean="${postadInstance}" field="location"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.contactNo}">
-				<li class="fieldcontain">
-				<strong>Seller's Contact Number: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="contactNo-label"><g:fieldValue bean="${postadInstance}" field="contactNo"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.condition}">
-				<li class="fieldcontain">
-				<strong>Condition: &nbsp;</strong>
-				<span class="property-value" aria-labelledby="condition-label"><g:fieldValue bean="${postadInstance}" field="condition"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.category}">
-				<li class="fieldcontain">
-				<strong>Category: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="category-label"><g:fieldValue bean="${postadInstance}" field="category"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${postadInstance?.dateCreated}">
-				<li class="fieldcontain">
-				<strong>Date Created: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" /></span>
-					
-				</li>
-				</g:if>
+		<section class="main-content">				
+				<div class="row">						
+					<div class="span9">
+						<div class="row">
+							<div class="span4">
+							<a class="thumbnail" data-fancybox-group="group1" >
+							<g:if test="${postadInstance.picture}">
+							<tr>					
+								<span class="property-value" aria-labelledby="picture-label">
+								<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
+								</span>
+							</tr>
+							</g:if>
+							</a>	
+							</div>
+							<div class="span5">
+								<address>
+									
+									<strong>Name of the item: </strong>
+									<g:if test="${postadInstance?.adname}">
+									<span class="property-value" aria-labelledby="adname-label"><g:fieldValue bean="${postadInstance}" field="adname"/></span>
+									</li></g:if><br>
+									
+									<strong>Location: </strong>
+									<g:if test="${postadInstance?.location}">
+									<span class="property-value" aria-labelledby="location-label"><g:fieldValue bean="${postadInstance}" field="location"/></span>
+									</g:if><br>
+									
+									<strong>Date Posted: </strong>
+									<g:if test="${postadInstance?.dateCreated}">
+									<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" /></span>
+									</g:if><br>
+									
+									<strong>Seller's Contact Number: </strong>
+									<g:if test="${postadInstance?.contactNo}">
+									<span class="property-value" aria-labelledby="contactNo-label"><g:fieldValue bean="${postadInstance}" field="contactNo"/></span>
+									</g:if>
+								</address>									
+								<h4><strong>Price: $587.50</strong></h4>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="span9">
+								<ul class="nav nav-tabs" id="myTab">
+									<li class="active"><a href="#home">Description</a></li>
+									<li class=""><a href="#profile">Additional Information</a></li>
+								</ul>							 
+								<div class="tab-content">
+									<div class="tab-pane active" id="home">
+									<g:if test="${postadInstance?.description}">
+									<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${postadInstance}" field="description"/></span>
+									</g:if>
+									</div>
+									<div class="tab-pane" id="profile">
+										<table class="table table-striped shop_attributes">	
+											<tbody>
+												<tr class="">
+													<th>Condition</th>
+													<td><g:if test="${postadInstance?.condition}">
+													<span class="property-value" aria-labelledby="condition-label"><g:fieldValue bean="${postadInstance}" field="condition"/></span>
+													</g:if></td>
+												</tr>
+												
+												<tr class="alt">
+													<th>Category</th>
+													<td><g:if test="${postadInstance?.category}">
+													<span class="property-value" aria-labelledby="category-label"><g:fieldValue bean="${postadInstance}" field="category"/></span>
+													</g:if></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>							
+							</div>
+					</div>
+				</div>
+		</section>
 				
-				
-				<g:if test="${postadInstance?.lastUpdated}">
-				<li class="fieldcontain">
-				<strong>Last Updated: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${postadInstance?.lastUpdated}" /></span>
-					</br>
-					</br>
-				</li>
-				</g:if>
-				
-				
-				<g:if test="${postadInstance?.description}">
-				<li class="fieldcontain">
-				<strong>Description: &nbsp;</strong>	
-				<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${postadInstance}" field="description"/></span>
-					
-				</li>
-				</g:if>
-				
-				<g:if test="${postadInstance.picture}">
-					<tr>
-					
-					<span class="property-value" aria-labelledby="picture-label">
-					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
-					</span>
-					</tr>
-				</g:if>
 				
 			</ol>
 			<g:form>
