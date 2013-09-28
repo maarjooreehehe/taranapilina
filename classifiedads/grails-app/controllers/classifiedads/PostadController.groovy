@@ -101,4 +101,51 @@ class PostadController extends BaseController {
             redirect(action: "show", id: id)
         }
     }
+	
+	//UPLOADING PICTURE
+	
+	def uploadPicture(Long id){
+		def postadInstance = Postad.get(id)
+		render(view:"uploadPicture", model:[postadInstance:postadInstance])
+	}
+	def upload_picture = {
+		def postadInstance = Postad.get(params.id)  // or however you select the current user
+		// Get the picture file from the multi-part request
+		def f = request.getFile('picture')
+
+		// List of OK mime-types
+		def okcontents = ['image/png', 'image/jpeg', 'image/gif']
+		if (! okcontents.contains(f.getContentType())) {
+			flash.message = "Picture must be one of: ${okcontents}"
+			render(view:'uploadPicture', model:[postadInstance:postadInstance])
+			return;
+		}
+
+		// Save the image and mime type
+		postadInstance.picture = f.getBytes()
+		postadInstance.pictureType = f.getContentType()
+		log.info("File uploaded: " + postadInstance.pictureType)
+
+		// Validation works, will check if the image is too big
+		if (!postadInstance.save()) {
+			render(view:'uploadPicture', model:[postadInstance:postadInstance])
+			return;
+		}
+  
+		flash.message = "Postad (${postadInstance.pictureType}, ${postadInstance.picture.size()} bytes) uploaded."
+		redirect(action:'show', id:postadInstance.id)
+	}
+	
+	def picture_image = {
+		def picturePostad = Postad.get(params.id)
+			if (!picturePostad || !picturePostad.picture || !picturePostad.pictureType) {
+				response.sendError(404)
+				return;
+			}
+			response.setContentType(picturePostad.pictureType)
+			response.setContentLength(picturePostad.picture.size())
+			OutputStream out = response.getOutputStream();
+			out.write(picturePostad.picture);
+			out.close();
+	}
 }

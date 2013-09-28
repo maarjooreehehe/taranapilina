@@ -121,13 +121,23 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${postadInstance.picture}">
+					<tr>
+					
+					<span class="property-value" aria-labelledby="picture-label">
+					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
+					</span>
+					</tr>
+				</g:if>
+				
 			</ol>
 			<g:form>
 								<fieldset class="buttons">
 								
 									<g:hiddenField name="id" value="${postadInstance?.id}" />
 									<g:actionSubmit class="Edit" action="edit" value="Edit" input tabindex="9" class="btn btn-inverse large" />
-									
+									<g:link class="" action="uploadPicture" id="${postadInstance?.id}">Upload Picture</g:link>
 									<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 								</fieldset>
 							</g:form>
