@@ -59,9 +59,11 @@
 					
 						<td>${fieldValue(bean: postadInstance, field: "adname")}</td>
 					
-						<td>${fieldValue(bean: postadInstance, field: "picture")}</td>
+						<td><span class="property-value" aria-labelledby="picture-label">
+					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
+					</span></td>
 					
-						<td>${fieldValue(bean: postadInstance, field: "pictureType")}</td>
+						
 					
 						<td>${fieldValue(bean: postadInstance, field: "price")}</td>
 					
