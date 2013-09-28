@@ -31,51 +31,40 @@
 		
 		
 		<div id="list-postad" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<section class="header_text sub">
+			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
+				<h4><span>New products</span></h4>
+			</section>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<g:sortableColumn property="adname" title="${message(code: 'postad.adname.label', default: 'Name of Ad')}" />
-					
-						<g:sortableColumn property="picture" title="${message(code: 'postad.picture.label', default: 'Picture')}" />
-					
-						<g:sortableColumn property="pictureType" title="${message(code: 'postad.pictureType.label', default: 'Type of Picture')}" />
-					
-						<g:sortableColumn property="price" title="${message(code: 'postad.price.label', default: 'Price')}" />
-					
-						<g:sortableColumn property="location" title="${message(code: 'postad.location.label', default: 'Location')}" />
-					
-						
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${postadInstanceList}" status="i" var="postadInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td>${fieldValue(bean: postadInstance, field: "adname")}</td>
-					
-						<td><span class="property-value" aria-labelledby="picture-label">
-					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
-					</span></td>
-					
-						
-					
-						<td>${fieldValue(bean: postadInstance, field: "price")}</td>
-					
-						<td>${fieldValue(bean: postadInstance, field: "location")}</td>
-					
-						<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link></td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-				
-			</table>
+	<section class="main-content">		
+		<div class="row">						
+			<div class="span9">								
+				<ul class="thumbnails listing-products">
+					<li class="span3">
+						<div class="product-box">
+							<tbody>
+								<g:each in="${postadInstanceList}" status="i" var="postadInstance">
+									<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+										<td><span class="property-value" aria-labelledby="picture-label">
+											<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
+											</span>
+										</td>
+										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></td></br>
+										<td><a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></td></br>
+										<td><p class="price">${fieldValue(bean: postadInstance, field: "price")}</p></td>
+										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link></td>
+									</tr>
+								</g:each>
+							</tbody>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+			
 			<div class="pagination">
 				<g:paginate total="${postadInstanceTotal}" />
 				
