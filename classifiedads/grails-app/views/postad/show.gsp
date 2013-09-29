@@ -51,6 +51,11 @@
 									<g:if test="${postadInstance?.adname}">
 									<span class="property-value" aria-labelledby="adname-label"><g:fieldValue bean="${postadInstance}" field="adname"/></span>
 									</li></g:if><br>
+											
+									<strong>Owner: </strong>
+									<g:if test="${postadInstance?.owner}">
+									<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${postadInstance}" field="owner"/></span>
+									</li></g:if><br>
 									
 									<strong>Location: </strong>
 									<g:if test="${postadInstance?.location}">

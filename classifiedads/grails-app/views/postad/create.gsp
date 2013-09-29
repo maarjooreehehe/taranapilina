@@ -88,6 +88,10 @@
 																<g:render template="formForOptionalInformation"/>
 															</fieldset>
 															
+															
+															<g:hiddenField name="owner.id" value="${session.userId}" />
+															
+															
 															<fieldset class="buttons">
 																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
 															</fieldset>

@@ -10,6 +10,10 @@ class Account {
 		Date dateCreated
 		Date lastUpdated
 		
+		static hasMany = [ads: Postad]
+		
+		String toString() { return name }
+		
     static constraints = {
 		name (blank:false)
 		username (size:6..10, unique:true, blank:false) 

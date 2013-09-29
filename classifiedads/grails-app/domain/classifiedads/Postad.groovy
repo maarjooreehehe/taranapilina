@@ -13,6 +13,9 @@ class Postad {
 	Date dateCreated
 	Date lastUpdated
 	String description
+	Account owner
+	
+	static belongsTo = [Account]
 
 	
     static constraints = {
