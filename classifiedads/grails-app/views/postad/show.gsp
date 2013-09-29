@@ -81,7 +81,18 @@
 								<h4><strong>Price: 
 									<g:if test="${postadInstance?.price}">
 									<span class="property-value" aria-labelledby="dateCreated-label"><g:fieldValue bean="${postadInstance}" field="price"/></span>
-									</g:if>.00<br></strong></h4>
+									</g:if>.00<br></strong></h4></br>
+									
+								<g:form>
+									<fieldset class="buttons">
+								
+									<g:hiddenField name="id" value="${postadInstance?.id}" />
+									<g:actionSubmit class="Edit" action="edit" value="Edit" input tabindex="9" class="btn btn-inverse large" />
+									<g:actionSubmit class="" action="uploadPicture" value="Upload Picture" id="${postadInstance?.id}" input tabindex="9" class="btn btn-inverse large" />
+									<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+									</fieldset>
+								</g:form>
+							
 							</div>
 						</div>
 						
@@ -105,15 +116,7 @@
 				
 				
 			</ol>
-			<g:form>
-								<fieldset class="buttons">
-								
-									<g:hiddenField name="id" value="${postadInstance?.id}" />
-									<g:actionSubmit class="Edit" action="edit" value="Edit" input tabindex="9" class="btn btn-inverse large" />
-									<g:link class="" action="uploadPicture" id="${postadInstance?.id}">Upload Picture</g:link>
-									<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-								</fieldset>
-							</g:form>
+							
 		
 		<section id="footer-bar">
 				<div class="row">
