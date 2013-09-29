@@ -59,7 +59,7 @@
 									
 									<strong>Date Posted: </strong>
 									<g:if test="${postadInstance?.dateCreated}">
-									<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" /></span>
+									<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" type="datetime" style="LONG" timeStyle="SHORT"/></span>
 									</g:if><br>
 									
 									<strong>Seller's Contact Number: </strong>
