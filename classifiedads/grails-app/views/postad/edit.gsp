@@ -25,11 +25,7 @@
 		<![endif]-->
 	</head>
 	<body>
-		
-		<div class="nav" role="navigation">
-			<ul>
-			
-		</div>
+
 		<div id="edit-postad" class="content scaffold-edit" role="main">
 			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">

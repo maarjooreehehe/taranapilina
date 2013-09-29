@@ -65,7 +65,18 @@
 									<strong>Seller's Contact Number: </strong>
 									<g:if test="${postadInstance?.contactNo}">
 									<span class="property-value" aria-labelledby="contactNo-label"><g:fieldValue bean="${postadInstance}" field="contactNo"/></span>
-									</g:if>
+									</g:if><br>
+									
+									<strong>Condition: </strong>
+									<g:if test="${postadInstance?.condition}">
+									<span class="property-value" aria-labelledby="condition-label"><g:fieldValue bean="${postadInstance}" field="condition"/></span>
+									</g:if><br>
+									
+									<strong>Category: </strong>
+									<g:if test="${postadInstance?.category}">
+									<span class="property-value" aria-labelledby="category-label"><g:fieldValue bean="${postadInstance}" field="category"/></span>
+									</g:if><br>
+
 								</address>									
 								<h4><strong>Price: 
 									<g:if test="${postadInstance?.price}">
@@ -78,32 +89,13 @@
 							<div class="span9">
 								<ul class="nav nav-tabs" id="myTab">
 									<li class="active"><a href="#home">Description</a></li>
-									<li class=""><a href="#profile">Additional Information</a></li>
+									
 								</ul>							 
 								<div class="tab-content">
 									<div class="tab-pane active" id="home">
 									<g:if test="${postadInstance?.description}">
 									<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${postadInstance}" field="description"/></span>
 									</g:if>
-									</div>
-									<div class="tab-pane" id="profile">
-										<table class="table table-striped shop_attributes">	
-											<tbody>
-												<tr class="">
-													<th>Condition</th>
-													<td><g:if test="${postadInstance?.condition}">
-													<span class="property-value" aria-labelledby="condition-label"><g:fieldValue bean="${postadInstance}" field="condition"/></span>
-													</g:if></td>
-												</tr>
-												
-												<tr class="alt">
-													<th>Category</th>
-													<td><g:if test="${postadInstance?.category}">
-													<span class="property-value" aria-labelledby="category-label"><g:fieldValue bean="${postadInstance}" field="category"/></span>
-													</g:if></td>
-												</tr>
-											</tbody>
-										</table>
 									</div>
 								</div>							
 							</div>
