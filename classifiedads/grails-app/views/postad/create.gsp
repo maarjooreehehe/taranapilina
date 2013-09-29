@@ -114,9 +114,7 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
-							<%--<li><a href="./about.html">About Us</a></li>--%>
-							<%--<li><a href="./contact.html">Contact Us</a></li>--%>
-							<li><a href="./list.html">View All Ads</a></li>
+							<li><g:link controller="postad" action="list">View All Ads</g:link></li>
 													
 						</ul>					
 					</div>
@@ -126,9 +124,7 @@
 							
 							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
 							<li><g:link controller="account" class="edit" action="edit" id="${session.userId}">Edit Account Details</g:link></li>
-							<%--<li><a href="./list.html">Order History</a></li>--%>
-							<%--<li><a href="#">Wish List</a></li>--%>
-							<%--<li><a href="#">Newsletter</a></li>--%>
+							
 						</ul>
 					</div>
 					<div class="span5">
