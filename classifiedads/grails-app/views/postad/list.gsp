@@ -46,7 +46,7 @@
 						<div class="product-box">
 							<tbody>
 								<g:each in="${postadInstanceList}" status="i" var="postadInstance">
-									<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+									
 										<td><span class="property-value" aria-labelledby="picture-label">
 											<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
 											</span>
@@ -55,7 +55,7 @@
 										<td><a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></td></br>
 										<td><p class="price">${fieldValue(bean: postadInstance, field: "price")}</p></td>
 										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link></td>
-									</tr>
+									
 								</g:each>
 							</tbody>
 						</div>

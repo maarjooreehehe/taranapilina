@@ -67,7 +67,10 @@
 									<span class="property-value" aria-labelledby="contactNo-label"><g:fieldValue bean="${postadInstance}" field="contactNo"/></span>
 									</g:if>
 								</address>									
-								<h4><strong>Price: $587.50</strong></h4>
+								<h4><strong>Price: 
+									<g:if test="${postadInstance?.price}">
+									<span class="property-value" aria-labelledby="dateCreated-label"><g:fieldValue bean="${postadInstance}" field="price"/></span>
+									</g:if>.00<br></strong></h4>
 							</div>
 						</div>
 						
