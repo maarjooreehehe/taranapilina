@@ -111,19 +111,17 @@ class AccountController {
     }
 
     def delete(Long id) {
-		session.username = null
-		session.userId = null
         def accountInstance = Account.get(id)
         if (!accountInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "index")
+            redirect(action: "logout")
             return
         }
 
         try {
             accountInstance.delete(flush: true)
             flash.message = message(code: 'default.deleted.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "list")
+            redirect(action: "logout")
         }
         catch (DataIntegrityViolationException e) {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'account.label', default: 'Account'), id])

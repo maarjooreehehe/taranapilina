@@ -16,6 +16,8 @@ class Postad {
 	Account owner
 	
 	static belongsTo = [Account]
+	
+	static searchable = true
 
 	
     static constraints = {
