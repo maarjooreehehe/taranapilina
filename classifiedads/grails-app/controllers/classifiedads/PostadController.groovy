@@ -151,19 +151,6 @@ class PostadController extends BaseController {
 	
 	def searchableService 
 	
-	def search = {
-		def query = params.q
-		if(query){
-			def srchResults = searchableService.search(query)
-			render(view: "list",
-				model: [postadInstanceList: srchResults.results,
-						postadInstanceTotal:srchResults.total])
-		}else{
-			redirect(controller: "searchable", action: "index")
-		}
-	}
-	
-	
 	
 	
 }

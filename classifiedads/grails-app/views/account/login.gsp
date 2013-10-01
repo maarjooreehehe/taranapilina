@@ -77,13 +77,15 @@
 					
 			</g:form>
 
-<section id="footer-bar">
+			<section id="footer-bar">
 				<div class="row">
 					<div class="span3">
-						<%--<h4>Navigation</h4>
+						<h4>Navigation</h4>
 						<ul class="nav">
-							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>	
-						</ul>--%>				
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
+							<li><g:link controller="postad" action="list">View All Ads</g:link></li>
+													
+						</ul>			
 					</div>
 					
 					<div class="span4">

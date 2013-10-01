@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 
-		<head>
+	<head>
 		<meta charset="utf-8">
 		<meta name="layout" content="mainpost"/>
 		<title>Post and Shoppe 'til you drop!</title>

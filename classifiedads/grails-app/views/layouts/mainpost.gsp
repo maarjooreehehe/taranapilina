@@ -21,9 +21,9 @@
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
-					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="QWERTY">
-					</form>
+					<g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
+						<g:textField name="q" class="input-block-level search-query" value="${params.q}" size="50"/> <input type="submit" value="Search" />
+					</g:form>
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
@@ -94,9 +94,9 @@
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
-					<form method="POST" class="search_form">
-						<input type="text" class="input-block-level search-query" Placeholder="QWERTY">
-					</form>
+					<g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
+						<g:textField name="q" class="input-block-level search-query" value="${params.q}" size="50"/> <input type="submit" value="Search" />
+					</g:form>
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
