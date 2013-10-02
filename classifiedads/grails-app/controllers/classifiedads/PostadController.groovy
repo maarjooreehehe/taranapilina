@@ -4,7 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class PostadController extends BaseController {
 	
-	def beforeInterceptor = [action:this.&auth,except:['list', 'show']]
+	def beforeInterceptor = [action:this.&auth,except:['list', 'show', 'search']]
 	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -151,6 +151,15 @@ class PostadController extends BaseController {
 	
 	def searchableService 
 	
-	
-	
+	def search = {
+		def query = params.q
+		if(query){
+			def srchResults = searchableService.search(query)
+			render(view: "search",
+				   model: [postadInstanceList: srchResults.results,
+						 postadInstanceTotal:srchResults.total])
+		}else{
+			redirect(action: "index")
+		}
+	}
 }
