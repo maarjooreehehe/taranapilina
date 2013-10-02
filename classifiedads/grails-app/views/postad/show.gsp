@@ -136,6 +136,9 @@
 									
 						</ul>					
 					</div>
+					<div class="span4">
+						
+					</div>
 					<div class="span5">
 						<p class="logo"><img src="../themes/images/logo.png" class="site_logo" alt=""></p>
 						<p>Buy and Sell in the Philippines. Easy. Simple. Free. Try it today!</p>
