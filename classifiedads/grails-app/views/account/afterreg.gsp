@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<head>
 		<meta charset="utf-8">
 		<meta name="layout" content="main"/>
 		<title>Post and Shoppe 'til you drop!</title>
@@ -33,19 +32,12 @@
 			
 		</section>
 		
-
-					
-										
-	
 		<section id="footer-bar">
 				<div class="row">
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li><a href="./index.html">Homepage</a></li>  
-							<%--<li><a href="./about.html">About Us</a></li>
-							<li><a href="./contact.html">Contact Us</a></li>
-							<li><a href="./cart.html">Your Cart</a></li>--%>
 							<li><g:link controller="account" action="login">Login</a></g:link></li>
 							<li><g:link controller="account" action="create">Register</g:link></li>
 						</ul>					

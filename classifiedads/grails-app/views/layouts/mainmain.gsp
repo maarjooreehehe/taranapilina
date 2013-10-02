@@ -50,36 +50,42 @@
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><g:link controller="postad" action="list">View All Ads</g:link></li>
-							<li><a href="#">Categories</a>
-								<ul>									
-									<li><a href="#">Real State</a></li>
-									<li><a href="#">Phones</a></li>
-									<li><a href="#">Cars and Automotives</a></li>
-								</ul>
-								</li>			
-							<li><a href="#">Location</a>
-								<ul>									
-									<li><a href="#">Manila</a></li>
-									<li><a href="#">CDO</a></li>
-									<li><a href="#">Iligan</a></li>
-								</ul>
-							</li>							
-							<li><a href="#">Price Range</a>
-								<ul>									
-									<li><a href="#">Under P100</a></li>
-									<li><a href="#">P100 to P200</a></li>
-									<li><a href="#">P250 to P500</a></li>
-									<li><a href="#">P500 to P1000</a></li>
-									<li><a href="#">P1000 and above</a></li>
+							<li><a>Categories</a>
+								<ul>	
+									<li><g:link controller="postad" action="search" params="[q: 'category: Appliances']">Appliances</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Books']">Books</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Clothing and Accessories']">Clothing and Accessories</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Electronics']">Electronics</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Furniture']">Furniture</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Games']">Games</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">PHealth and Beauty</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Music']">Music</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Office and School Supplies']">Office and School Supplies</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Outdoors and Gardens']">Outdoors and Gardens</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Pets']">Pets</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Phones and Handhelds']">Phones and Handhelds</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Souvenirs and Giveaways']">Souvenirs and Giveaways</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Sports and Hobbies']">Sports and Hobbies</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Tools']">Tools</g:link></li>
 								</ul>
 							</li>
-							<li><a href="#">Condition</a>
-								<ul>									
-									<li><a href="#">Brand New</a></li>
-									<li><a href="#">Second Hand (Used)</a></li>
-									<li><a href="#">Defective</a></li>
+							<li><a>Location</a>
+								<ul>	
+									<li><g:link controller="postad" action="search" params="[q: 'location: Cagayan de Oro']">Cagayan de Oro</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'location: Cebu']">Cebu</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'location: Davao']">Davao</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'location: Iligan City']">Iligan City</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'location: Metro Manila']">Metro Manila</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'location: Others']">Others</g:link></li>
 								</ul>
 							</li>	
+							<li><a>Condition</a>
+								<ul>
+									<li><g:link controller="postad" action="search" params="[q: 'condition: Brand New']">Brand New</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'condition: Second Hand (Used)']">Second Hand (Used)</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'condition: Defective']">Defective</g:link></li>
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
