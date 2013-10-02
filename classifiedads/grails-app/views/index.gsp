@@ -171,7 +171,7 @@
 			<div class="row">
 				<div class="span4">
 					<g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
-						<g:textField name="q" class="input-block-level search-query" value="${params.q}" size="50"/> <input type="submit" value="Search" />
+						<g:textField name="q" class="input-block-level search-query" value="${params.q}" size="50" placeholder="SEARCH"/>
 					</g:form>
 				</div>
 				

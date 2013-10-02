@@ -64,6 +64,10 @@
 																<fieldset class="form">
 																	<g:render template="form"/>
 																</fieldset>
+																
+																<fieldset class="buttons">
+																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
+																</fieldset>
 														</div>
 														<div class="span6">
 															<h4>Ad Description</h4>
@@ -71,30 +75,9 @@
 																<fieldset class="form">
 																	<g:render template="formForDescription"/>
 																</fieldset>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="accordion-group">
-											<div class="accordion-heading">
-												<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Other Ad Information</a>
-											</div>
-											<div id="collapseTwo" class="accordion-body collapse">
-												<div class="accordion-inner">
-													<div class="row-fluid">
-														<div class="span6">
-															<fieldset class="form">
-																<g:render template="formForOptionalInformation"/>
-															</fieldset>
+																
+																<g:hiddenField name="owner.id" value="${session.userId}" />
 															
-															
-															<g:hiddenField name="owner.id" value="${session.userId}" />
-															
-															
-															<fieldset class="buttons">
-																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
-															</fieldset>
 															
 															
 														</div>
