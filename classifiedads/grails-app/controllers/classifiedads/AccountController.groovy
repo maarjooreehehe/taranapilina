@@ -141,7 +141,6 @@ class AccountController {
 			session.username = account.username
 			session.userId = account.id
 			
-			def redirectParams =session.originalRequestParams?session.originalRequestParams:[controller:'postad', action:"create"]
 			redirect(controller:'postad', action:'create')
 		}
 
