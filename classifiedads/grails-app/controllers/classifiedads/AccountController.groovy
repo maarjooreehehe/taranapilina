@@ -127,11 +127,17 @@ class AccountController {
 		
 		def account = Account.findByUsernameAndPassword(params.username,params.password)
 		if (account) {
+					
 			session.username = account.username
 			session.name = account.name
 			session.userId = account.id
-			
+	
+			if (session.username == 'supadmin') {
+				redirect (controller:'account', action:'index')
+			}
+			else{
 			redirect(controller:'postad', action:'create')
+			}
 		}
 
 		else {
