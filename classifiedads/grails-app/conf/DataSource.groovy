@@ -2,7 +2,7 @@ dataSource {
     pooled = true
     driverClassName = "org.postgresql.Driver"
     username = "postgres"
-    password = "postgres"
+    password = "hillary18"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -17,7 +17,7 @@ environments {
             url = "jdbc:postgresql://localhost/ads"
 			driverClassName = "org.postgresql.Driver"
 		    username = "postgres"
-			password = "postgres"
+			password = "hillary18"
 
         }
     }
@@ -27,7 +27,7 @@ environments {
             url = "jdbc:postgresql://localhost/ads"
 			driverClassName = "org.postgresql.Driver"
 		    username = "postgres"
-			password = "postgres"
+			password = "hillary18"
 
 			}
     }
@@ -37,7 +37,7 @@ environments {
             url = "jdbc:postgresql://localhost/ads"
 			driverClassName = "org.postgresql.Driver"
 		    username = "postgres"
-			password = "postgres"
+			password = "hillary18"
             pooled = true
             properties {
                maxActive = -1

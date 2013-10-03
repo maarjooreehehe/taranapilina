@@ -128,6 +128,7 @@ class AccountController {
 		def account = Account.findByUsernameAndPassword(params.username,params.password)
 		if (account) {
 			session.username = account.username
+			session.name = account.name
 			session.userId = account.id
 			
 			redirect(controller:'postad', action:'create')
@@ -142,6 +143,7 @@ class AccountController {
 	
 	def logout = {
 		session.username = null
+		session.name = null
 		session.userId = null
 		flash.message = 'Successfully logged out'
 		redirect(controller:'postad', action:'list')
