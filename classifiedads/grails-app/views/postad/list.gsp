@@ -173,9 +173,13 @@
 						</ul>					
 					</div>
 					
-					
+					<g:if test="${session.username == 'supadmin'}">
 					<div class="span4">
-
+					</div>
+					</g:if>
+					<g:else>
+					<div class="span4">
+					
 						<h4>My Account</h4>
 						<ul class="nav">
 							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
@@ -184,7 +188,7 @@
 						</ul>
 			
 					</div>
-					
+					</g:else>
 					
 					<div class="span5">
 						

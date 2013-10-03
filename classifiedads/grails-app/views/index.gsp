@@ -137,7 +137,7 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
-							<li><a href="./about.html">About Us</a></li>
+							
 						</ul>					
 					</div>
 					<div class="span4">
@@ -282,7 +282,7 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
 							<li><g:link controller="account" action="list">List of All Accounts</g:link></li>
 							<li><a href="./postad/list">List of All Ads</a></li>
 						</ul>					
@@ -431,7 +431,7 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
-							<li><a href="./about.html">About Us</a></li>
+							
 						</ul>					
 					</div>
 					<div class="span4">
@@ -439,7 +439,7 @@
 						<ul class="nav">
 							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
 							<li><g:link controller="account" class="edit" action="edit" id="${session.userId}">Edit Account Details</g:link></li>
-							<li><a href="./postad/list">My Posted Ads</a></li>
+							<%--<li><a href="./postad/list">My Posted Ads</a></li>--%>
 							
 						</ul>
 					</div>

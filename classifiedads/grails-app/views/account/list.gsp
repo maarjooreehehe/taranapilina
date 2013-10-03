@@ -82,7 +82,7 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
 							<li><g:link controller="account" action="list">List of All Accounts</g:link></li>
 							<li><a href="./postad/list">List of All Ads</a></li>
 						</ul>					
@@ -91,7 +91,7 @@
 						
 					</div>
 					<div class="span5">
-						<p class="logo"><img src="themes/images/logo.png" class="site_logo" alt=""></p>
+						<p class="logo"><img class="logo" src="${resource(dir:'themes/images', file:'logo.png')}" /></p>
 						<p>Buy and Sell in the Philippines. Easy. Simple. Free. Try it today!</p>
 						<br/>
 					</div>					
