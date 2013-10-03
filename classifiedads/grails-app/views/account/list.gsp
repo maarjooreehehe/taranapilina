@@ -77,5 +77,45 @@
 				<g:paginate total="${accountInstanceTotal}" />
 			</div>
 		</div>
+		<section id="footer-bar">
+				<div class="row">
+					<div class="span3">
+						<h4>Navigation</h4>
+						<ul class="nav">
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
+							<li><g:link controller="account" action="list">List of All Accounts</g:link></li>
+							<li><a href="./postad/list">List of All Ads</a></li>
+						</ul>					
+					</div>
+					<div class="span4">
+						
+					</div>
+					<div class="span5">
+						<p class="logo"><img src="themes/images/logo.png" class="site_logo" alt=""></p>
+						<p>Buy and Sell in the Philippines. Easy. Simple. Free. Try it today!</p>
+						<br/>
+					</div>					
+				</div>	
+			</section>
+			<section id="copyright">
+				<span>Copyright 2013 One Shoppe  All rights reserved.</span>
+			</section>
+		</div>
+		<script src="themes/js/common.js"></script>
+		<script src="themes/js/jquery.flexslider-min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(document).ready(function() {
+					$('.flexslider').flexslider({
+						animation: "fade",
+						slideshowSpeed: 4000,
+						animationSpeed: 600,
+						controlNav: false,
+						directionNav: true,
+						controlsContainer: ".flex-container" // the container that holds the flexslider
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
