@@ -65,16 +65,19 @@
 																	
 																</fieldset>
 																<g:hiddenField name="owner.id" value="${session.userId}" />
-																<fieldset class="buttons">
-																<g:submitButton name="save" class="save" input tabindex="9" class="btn btn-inverse large" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-																<g:submitButton name="delete" class="delete" input tabindex="9" class="btn btn-inverse large" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-																</fieldset>
+																
 														</div>
 														<div class="span6">
 															<h4>Ad Description</h4>
 															<p>Providing a relevant text description will give your advertisement a higher ranking in our search results.</p>
 																<fieldset class="form">
 																	<g:render template="formForDescription"/>
+																</fieldset>
+																
+																</br>
+																<fieldset class="buttons">
+																<g:submitButton name="save" class="save" input tabindex="9" class="btn btn-inverse large" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+																<g:submitButton name="delete" class="delete" input tabindex="9" class="btn btn-inverse large" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 																</fieldset>
 														</div>
 													</div>
