@@ -61,7 +61,7 @@
 			</section>
 		
 			<section id="copyright">
-				<span>Copyright 2013 One Shoppe  All right reserved.</span>
+				<span>Copyright 2013 One Shoppe  All rights reserved.</span>
 			</section>
 		</div>
 		<script src="../themes/js/common.js"></script>

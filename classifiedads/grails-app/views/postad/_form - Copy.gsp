@@ -1,7 +1,5 @@
 <%@ page import="classifiedads.Postad" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: postadInstance, field: 'adname', 'error')} required">
 	<label for="adname">
 		What are you selling or offering?

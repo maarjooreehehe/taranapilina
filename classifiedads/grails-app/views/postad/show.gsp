@@ -364,7 +364,7 @@
 									<span class="property-value" aria-labelledby="dateCreated-label"><g:fieldValue bean="${postadInstance}" field="price"/></span>
 									</g:if>.00<br></strong></h4></br>
 									
-								<g:if test="${session.username == "${postadInstance.owner}"}">
+								<g:if test="${session.username == "${postadInstance?.owner}"}">
 								<g:form>
 									<fieldset class="buttons">
 									<g:hiddenField name="id" value="${postadInstance?.id}" />
