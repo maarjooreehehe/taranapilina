@@ -4,7 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class PostadController extends BaseController {
 	
-	def beforeInterceptor = [action:this.&auth,except:['list', 'show', 'search', 'picture_image']]
+	def beforeInterceptor = [action:this.&auth,except:['list', 'show', 'search']]
 	
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -20,26 +20,51 @@ class PostadController extends BaseController {
     def create() {
         [postadInstance: new Postad(params)]
     }
-
-    def save() {
+	
+	def save() {
         def postadInstance = new Postad(params)
+
+	def funcPic = request.getFile('itemPicture')
+
+		// List of OK mime-types
+		def okcontents = ['image/png', 'image/jpeg', 'image/gif']
+		if (!okcontents.contains(funcPic.getContentType())) {
+			flash.message = "Picture must be one of: ${okcontents}"
+			redirect(action:"create")
+			return;
+		}
+
+		// Save the image and mime type
+		postadInstance.picture = funcPic.getBytes()
+		
+		postadInstance.pictureType = funcPic.getContentType()
+	
+		
         if (!postadInstance.save(flush: true)) {
             render(view: "create", model: [postadInstance: postadInstance])
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'postad.label', default: 'Postad'), postadInstance.id])
-        redirect(action: "show", id: postadInstance.id)
-    }
+        redirect(action:"show", id:postadInstance.id)
 
+    }
+	
+	def showPicture(){
+		def postadInstance = Postad.get(params.id)
+			if (!postadInstance || !postadInstance.picture || !postadInstance.pictureType) {
+				response.sendError(404)
+				return;
+			}
+			response.setContentType(postadInstance.pictureType)
+			response.setContentLength(postadInstance.picture.size())
+			OutputStream out = response.getOutputStream();
+			out.write(postadInstance.picture);
+			out.close();
+	}
+	
     def show(Long id) {
         def postadInstance = Postad.get(id)
-        if (!postadInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'postad.label', default: 'Postad'), id])
-            redirect(action: "list")
-            return
-        }
-
+		flash.message=""
         [postadInstance: postadInstance]
     }
 
@@ -163,3 +188,4 @@ class PostadController extends BaseController {
 		}
 	}
 }
+

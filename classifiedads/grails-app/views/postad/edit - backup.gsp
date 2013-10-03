@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="mainmain"/>
+		<meta name="layout" content="mainpost"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
@@ -25,7 +25,6 @@
 		<![endif]-->
 	</head>
 	<body>
-		
 		<section class="header_text sub">
 			<img class="pageBanner" src="../themes/images/pageBanner.png" alt="New products" >
 			<h4><span>Edit Ad Details</span></h4>
@@ -34,7 +33,7 @@
 				<div class="row">
 					<div class="span12">					
 						
-						<!--<form action="save" method="post" class="form-stacked">-->
+						<form action="save" method="post" class="form-stacked">
 							<fieldset>
 								<div id="create-postad" class="content scaffold-create" role="main">
 									<g:if test="${flash.message}">
@@ -62,20 +61,33 @@
 														<div class="span6">
 																<fieldset class="form">
 																	<g:render template="form"/>
-																	
-																</fieldset>
-																<g:hiddenField name="owner.id" value="${session.userId}" />
-																<fieldset class="buttons">
-																<g:submitButton name="save" class="save" input tabindex="9" class="btn btn-inverse large" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-																<g:submitButton name="delete" class="delete" input tabindex="9" class="btn btn-inverse large" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 																</fieldset>
 														</div>
 														<div class="span6">
 															<h4>Ad Description</h4>
-															<p>Providing a relevant text description will give your advertisement a higher ranking in our search results.</p>
 																<fieldset class="form">
 																	<g:render template="formForDescription"/>
 																</fieldset>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="accordion-group">
+											<div class="accordion-heading">
+												<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Other Ad Information</a>
+											</div>
+											<div id="collapseTwo" class="accordion-body collapse">
+												<div class="accordion-inner">
+													<div class="row-fluid">
+														<div class="span6">
+															<fieldset class="form">
+																<g:render template="formForOptionalInformation"/>
+															</fieldset>
+															<fieldset class="buttons">
+																<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+																<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+															</fieldset>
 														</div>
 													</div>
 												</div>

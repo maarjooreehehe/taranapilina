@@ -36,7 +36,7 @@
 				<div class="row">
 					<div class="span12">					
 						
-						<!--<form action="save" method="post" class="form-stacked">-->
+						<form action="save" method="post" class="form-stacked">
 							<fieldset>
 								<div id="create-postad" class="content scaffold-create" role="main">
 									<g:if test="${flash.message}">
@@ -49,8 +49,7 @@
 											</g:eachError>
 										</ul>
 									</g:hasErrors>
-						
-								<g:form action="save" method="post" enctype="multipart/form-data">
+								<g:form action="save"  enctype="multipart/form-data">
 									<div class="accordion" id="accordion2">
 										<div class="accordion-group">
 											<div class="accordion-heading">
@@ -78,7 +77,9 @@
 																</fieldset>
 																
 																<g:hiddenField name="owner.id" value="${session.userId}" />
-
+															
+															
+															
 														</div>
 													</div>
 												</div>
@@ -87,11 +88,11 @@
 									</div>
 									
 									
-								</g:form>	
-
-	</fieldset>
-						<!--</form>		-->								
-		
+								</g:form>									
+									
+							</fieldset>
+						</form>					
+									
 				</div>
 			</section>	
 			<section id="footer-bar">
@@ -122,7 +123,7 @@
 			</section>
 		
 			<section id="copyright">
-				<span>Copyright 2013 One Shoppe  All right reserved.</span>
+				<span>Copyright 2013 One Shoppe  All rights reserved.</span>
 			</section>
 		</div>
 		

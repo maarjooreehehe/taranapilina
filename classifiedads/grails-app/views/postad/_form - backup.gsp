@@ -50,11 +50,3 @@
 	<g:select name="category" from="${postadInstance.constraints.category.inList}" required="" value="${postadInstance?.category}" valueMessagePrefix="postad.category" class="input-xlarge"/>
 </div>
 
-
-
-
-
-
-	<td>Item Picture (2MB)</td>
-	<td><input type="file" name="itemPicture" /></td>
-
