@@ -168,7 +168,7 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
 							
 						</ul>					
 					</div>
