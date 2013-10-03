@@ -65,10 +65,8 @@
 																<fieldset class="form">
 																	<g:render template="form"/>
 																</fieldset>
+																</br>
 																
-																<fieldset class="buttons">
-																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
-																</fieldset>
 														</div>
 														<div class="span6">
 															<h4>Ad Description</h4>
@@ -77,7 +75,14 @@
 																	<g:render template="formForDescription"/>
 																</fieldset>
 																
+																</br>
 																<g:hiddenField name="owner.id" value="${session.userId}" />
+																
+																<fieldset class="buttons">
+																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
+																</fieldset>
+																
+																
 
 														</div>
 													</div>

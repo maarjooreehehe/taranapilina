@@ -55,6 +55,5 @@
 
 
 
-	<td>Item Picture (2MB)</td>
-	<td><input type="file" name="itemPicture" /></td>
+	
 
