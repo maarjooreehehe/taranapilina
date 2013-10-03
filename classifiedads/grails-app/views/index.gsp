@@ -128,8 +128,7 @@
 				<div class="row">
 					<div class="span12">													
 						<br/>
-								
-				</div>
+					</div>
 			</section>
 			
 			<section id="footer-bar">
@@ -151,7 +150,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright 2013 One Shoppe  All right reserved.</span>
+				<span>Copyright 2013 One Shoppe  All rights reserved.</span>
 			</section>
 		</div>
 		<script src="themes/js/common.js"></script>
@@ -171,13 +170,6 @@
 			});
 		</script>
 		</g:if>
-		
-		
-		
-		
-		
-		
-		
 		
 		<g:elseif test="${session.username == 'supadmin'}">
 		
@@ -306,7 +298,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright 2013 One Shoppe  All right reserved.</span>
+				<span>Copyright 2013 One Shoppe  All rights reserved.</span>
 			</section>
 		</div>
 		<script src="themes/js/common.js"></script>
@@ -327,13 +319,7 @@
 		</script>
 		</g:elseif>
 		
-		
-		
-		
-		
-		
 		<g:else>
-		
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
@@ -444,7 +430,7 @@
 					<div class="span3">
 						<h4>Navigation</h4>
 						<ul class="nav">
-							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
 							<li><a href="./about.html">About Us</a></li>
 						</ul>					
 					</div>
@@ -465,7 +451,7 @@
 				</div>	
 			</section>
 			<section id="copyright">
-				<span>Copyright 2013 One Shoppe  All right reserved.</span>
+				<span>Copyright 2013 One Shoppe  All rights reserved.</span>
 			</section>
 		</div>
 		<script src="themes/js/common.js"></script>
@@ -485,7 +471,5 @@
 			});
 		</script>
 		</g:else>
-		
-		
 	</body>
 </html>
