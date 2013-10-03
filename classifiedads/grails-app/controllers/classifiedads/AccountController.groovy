@@ -37,18 +37,7 @@ class AccountController {
         redirect(action: "afterreg", id: accountInstance.id)
     }
 	
-	def welcome(Long id) {
-        def accountInstance = Account.get(id)
-        if (!accountInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
-            redirect(action: "list")
-            return
-        }
-
-        [accountInstance: accountInstance]
-    }
-	
-    def show(Long id) {
+	def show(Long id) {
         def accountInstance = Account.get(id)
         if (!accountInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), id])
