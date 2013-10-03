@@ -92,6 +92,17 @@
 				
 				
 			</ol>
+			
+			<g:if test="${session.username == 'supadmin'}">
+			<g:form>
+				<fieldset class="buttons">
+					<g:hiddenField name="id" value="${accountInstance?.id}" />
+					<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+				</fieldset>
+			</g:form>
+			</g:if>
+			
+			<g:else>
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${accountInstance?.id}" />
@@ -99,29 +110,30 @@
 					<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
+			</g:else>
 		
 		
 		<section id="footer-bar">
 				<div class="row">
 					<div class="span3">
+					<g:if test="${session.username == 'supadmin'}">
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
-							<%--<li><a href="./about.html">About Us</a></li>--%>
-							<%--<li><a href="./contact.html">Contact Us</a></li>--%>
-							<li><a href="./list.html">View All Ads</a></li>
-													
-						</ul>					
+							<li><g:link controller="account" action="list">List of All Accounts</g:link></li>
+							<li><a href="./postad/list">List of All Ads</a></li>	
+						</ul>		
+					</g:if>
+					<g:else>
+						<h4>Navigation</h4>
+						<ul class="nav">
+							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
+							<li><a href="./list.html">View All Ads</a></li>					
+						</ul>	
+					</g:else>
 					</div>
 					<div class="span4">
-						<%--<h4>My Account</h4>
-						<ul class="nav">
-							
-							<li><g:link controller="account" class="show" action="show" id="${accountInstance?.id}">My Account</g:link></li>
-							<li><a href="./list.html">Order History</a></li>
-							<li><a href="#">Wish List</a></li>
-							<li><a href="#">Newsletter</a></li>
-						</ul>--%>
+						
 					</div>
 					<div class="span5">
 						<p><img class="logo" src="${resource(dir:'themes/images', file: 'logo.png')}" ></p>

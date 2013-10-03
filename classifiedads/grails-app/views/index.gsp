@@ -66,7 +66,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'category: Electronics']">Electronics</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Furniture']">Furniture</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Games']">Games</g:link></li>
-									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">PHealth and Beauty</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">Health and Beauty</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Music']">Music</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Office and School Supplies']">Office and School Supplies</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Outdoors and Gardens']">Outdoors and Gardens</g:link></li>
@@ -184,7 +184,7 @@
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
-					<g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
+					<g:form url='[controller: "postad", action: "search"]' id="searchableForm" name="searchableForm" method="get">
 						<g:textField name="q" class="input-block-level search-query" value="${params.q}" size="50" placeholder="SEARCH"/>
 					</g:form>
 				</div>
@@ -197,7 +197,6 @@
 						
 							<li>Hello ${session.username}!</li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>
 						</ul>
 						<g:if test="${!session.username}">
@@ -225,7 +224,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'category: Electronics']">Electronics</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Furniture']">Furniture</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Games']">Games</g:link></li>
-									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">PHealth and Beauty</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">Health and Beauty</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Music']">Music</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Office and School Supplies']">Office and School Supplies</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Outdoors and Gardens']">Outdoors and Gardens</g:link></li>
@@ -293,17 +292,11 @@
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Hompage</a></li>
 							<li><g:link controller="account" action="list">List of All Accounts</g:link></li>
-							<li><a href="./about.html">About Us</a></li>
+							<li><a href="./postad/list">List of All Ads</a></li>
 						</ul>					
 					</div>
 					<div class="span4">
-						<h4>My Account</h4>
-						<ul class="nav">
-							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
-							<li><g:link controller="account" class="edit" action="edit" id="${session.userId}">Edit Account Details</g:link></li>
-							<li><a href="./postad/list">My Posted Ads</a></li>
-							
-						</ul>
+						
 					</div>
 					<div class="span5">
 						<p class="logo"><img src="themes/images/logo.png" class="site_logo" alt=""></p>
@@ -344,7 +337,7 @@
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
-					<g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
+					<g:form url='[controller: "postad", action: "search"]' id="searchableForm" name="searchableForm" method="get">
 						<g:textField name="q" class="input-block-level search-query" value="${params.q}" size="50" placeholder="SEARCH"/>
 					</g:form>
 				</div>
@@ -385,7 +378,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'category: Electronics']">Electronics</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Furniture']">Furniture</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Games']">Games</g:link></li>
-									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">PHealth and Beauty</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">Health and Beauty</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Music']">Music</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Office and School Supplies']">Office and School Supplies</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Outdoors and Gardens']">Outdoors and Gardens</g:link></li>

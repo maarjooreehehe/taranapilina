@@ -112,7 +112,9 @@
 						
 							<li>Hello ${session.username}!</li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
+							<g:if test="${!session.username == 'supadmin'}">
+								<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
+							</g:if>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>
 						</ul>
 						<g:if test="${!session.username}">
