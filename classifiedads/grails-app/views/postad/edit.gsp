@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="mainpost"/>
+		<meta name="layout" content="mainmain"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
@@ -25,8 +25,11 @@
 		<![endif]-->
 	</head>
 	<body>
-		
-		</div>
+		<section class="header_text sub">
+			<img class="pageBanner" src="../themes/images/pageBanner.png" alt="New products" >
+			<h4><span>Edit Ad Details</span></h4>
+		</section>
+	
 		<div id="edit-postad" class="content scaffold-edit" role="main">
 		<!--	<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
