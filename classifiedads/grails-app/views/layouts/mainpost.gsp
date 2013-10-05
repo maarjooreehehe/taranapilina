@@ -17,6 +17,7 @@
 	</head>
 	<body>
 	<g:if test="${!session.username}">
+	<header class = "jumbotron subhead" id = "overview">
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
@@ -40,8 +41,9 @@
 		<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">
-			
-					<a class="home" href="${createLink(uri: '/')}" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
+					
+					<a href="${createLink(uri: '/')}"><img class="logo pull-left" src="${resource(dir:'themes/images', file: 'logo.png')}" ></a>
+					
 					
 					<nav id="menu" class="pull-right">
 						<ul>
@@ -54,7 +56,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'category: Electronics']">Electronics</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Furniture']">Furniture</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Games']">Games</g:link></li>
-									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">Health and Beauty</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Health and Beauty']">PHealth and Beauty</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Music']">Music</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Office and School Supplies']">Office and School Supplies</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Outdoors and Gardens']">Outdoors and Gardens</g:link></li>
@@ -74,20 +76,18 @@
 									<li><g:link controller="postad" action="search" params="[q: 'location: Metro Manila']">Metro Manila</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'location: Others']">Others</g:link></li>
 								</ul>
-							</li>							
+							</li>	
 							<li><a>Condition</a>
 								<ul>
 									<li><g:link controller="postad" action="search" params="[q: 'condition: Brand New']">Brand New</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'condition: Second Hand (Used)']">Second Hand (Used)</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'condition: Defective']">Defective</g:link></li>
 								</ul>
-							</li>	
+							</li>
 						</ul>
 					</nav>
 				</div>
 			</section>
-			</div>
-			
 			
 		<g:layoutBody/>
 		
