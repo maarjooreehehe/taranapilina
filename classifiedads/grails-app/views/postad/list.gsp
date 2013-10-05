@@ -38,12 +38,15 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+			
+			
 	<section class="main-content">		
 		<div class="row">						
 			<div class="span9">								
 				<ul class="thumbnails listing-products">
 					<li class="span3">
 						<div class="product-box">
+						
 							<tbody>
 								<g:each in="${postadInstanceList}" status="i" var="postadInstance">
 									
@@ -51,19 +54,26 @@
 											<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
 											</span>
 										</td>
+										
+										
+										
 										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></td></br>
 										<td><a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></td></br>
 										<td><p class="price">${fieldValue(bean: postadInstance, field: "price")}</p></td>
 										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link></td>
+										
 									
 								</g:each>
 							</tbody>
+							
 						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</section>
+	
+	
 			
 			<section id="footer-bar">
 				<div class="row">
