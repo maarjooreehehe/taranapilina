@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="mainmain"/>
+		<meta name="layout" content="mainpost"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
@@ -94,7 +94,7 @@
 									<fieldset class="buttons">
 									
 									<g:hiddenField name="id" value="${postadInstance?.id}" />
-																	
+																		
 									<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 									</fieldset>
 									
