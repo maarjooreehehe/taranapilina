@@ -57,9 +57,7 @@
 </div>
 
 </br>
-
-
-	<td>Advertisement Picture (2MB)</td></br>
+<td>Advertisement Picture (2MB)</td></br>
 	<td><input type="file" name="itemPicture" input tabindex="9" class="btn btn-inverse large" /></td>
 
 
