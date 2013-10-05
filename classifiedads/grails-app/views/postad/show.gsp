@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="mainpost"/>
+		<meta name="layout" content="mainmain"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
