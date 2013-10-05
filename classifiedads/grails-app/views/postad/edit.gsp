@@ -2,9 +2,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'postad.label', default: 'Postad')}" />
-		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<meta charset="utf-8">
+		<meta name="layout" content="mainmain"/>
+		<title>Post and Shoppe 'til you drop!</title>
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
+		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap-responsive.min.css')} "/>
+		<link rel="stylesheet" href="${resource(dir:'themes/css/bootstrap', file: 'bootstrap.css')} "/>
+		
+		<!-- global styles -->
+		<link rel="stylesheet" href="${resource(dir:'themes/css', file: 'flexslider.css')} "/>
+		<link rel="stylesheet" href="${resource(dir:'themes/css', file: 'main.css')} "/>
+
+		<!-- scripts -->
+		<script src="../themes/js/jquery-1.7.2.min.js"></script>
+		<script src="../bootstrap/js/bootstrap.min.js"></script>				
+		<script src="../themes/js/superfish.js"></script>	
+		<script src="../themes/js/jquery.scrolltotop.js"></script>
+		<!--[if lt IE 9]>			
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="../js/respond.min.js"></script>
+		<![endif]-->
 	</head>
 	<body>
 		<a href="#edit-postad" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -34,12 +52,6 @@
 					<g:render template="form"/>
 				</fieldset>
 				
-				<div class="span6">
-															<h4>Ad Description</h4>
-															<p>Providing a relevant text description will give your advertisement a higher ranking in our search results.</p>
-																<fieldset class="form">
-																	<g:render template="formForDescription"/>
-																</fieldset>
 				
 				
 				<fieldset class="buttons">
