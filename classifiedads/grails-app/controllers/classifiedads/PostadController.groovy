@@ -64,7 +64,12 @@ class PostadController extends BaseController {
 	
     def show(Long id) {
         def postadInstance = Postad.get(id)
-		flash.message=""
+        if (!postadInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'postad.label', default: 'Postad'), id])
+            redirect(action: "list")
+            return
+        }
+
         [postadInstance: postadInstance]
     }
 

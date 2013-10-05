@@ -27,7 +27,6 @@
 		<![endif]-->
 	</head>
 	<body>
-	
 		<section class="header_text sub">
 			<img class="pageBanner" src="../themes/images/pageBanner.png" alt="New products" >
 			<h4><span>Post a Free Ad</span></h4>
@@ -57,7 +56,6 @@
 											<div class="accordion-heading">
 												<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Required Information</a>
 											</div>
-											
 											<div id="collapseOne" class="accordion-body in collapse">
 												<div class="accordion-inner">
 													<div class="row-fluid">
@@ -67,15 +65,25 @@
 																<fieldset class="form">
 																	<g:render template="form"/>
 																</fieldset>
+																
 																</br>
-															<fieldset class="buttons">
+																<div class="span6">
+															<h4>Ad Description</h4>
+															<p>Providing a relevant text description will give your advertisement a higher ranking in our search results.</p>
+																<fieldset class="form">
+																	<g:render template="formForDescription"/>
+																</fieldset>
+				
+																</br>
+																<fieldset class="buttons">
 																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
 																</fieldset>
-															
+																</br>
 																
 														</div>
 														
-																
+													</br>
+																<g:hiddenField name="owner.id" value="${session.userId}" />
 																
 																
 																
