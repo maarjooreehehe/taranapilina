@@ -52,8 +52,7 @@
 				</td>
 	
 				<td>
-				
-				
+		
 				<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
 				<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
 				<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
@@ -126,50 +125,35 @@
 		
 			
 			
-	<section class="main-content">		
-		<div class="row">						
-			<div class="span12">
-				<h4 class="title">
-									<span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
-									<span class="pull-right">
-										<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
-									</span>
-								</h4>
-				<div id="myCarousel" class="myCarousel carousel slide">
-				<div class="carousel-inner">
-				<div class="active item">
-				<ul class="thumbnails">
-					<li class="span3">
-						<div class="product-box">
-							
-							
-								<g:each in="${postadInstanceList}" status="i" var="postadInstance">
-									
-										<td><span class="property-value" aria-labelledby="picture-label">
-											<p><img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" /></p>
-											</span>
-										</td>
-										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></td></br>
-										<td><a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></td></br>
-										<td><p class="price">${fieldValue(bean: postadInstance, field: "price")}.00</p></td>
-										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link></td>
-									
-								</g:each>
-							
-							
-						</div>
-						<br/>
-					</li>
-				</ul>
-			</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		
-		
-	</section>
+<center>		
+	<table border = "1" cellpadding = "5" width = "950px">
+	
 			
+		<tr>
+		<g:each in="${postadInstanceList}" status="i" var="postadInstance">
+			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+				<td>
+					<span class="property-value" aria-labelledby="picture-label">
+					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="300" height="250" />
+					</span>
+				</td>
+	
+				<td>
+		
+				<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
+				<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
+				<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
+				<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
+				</b>
+				
+				</td>
+			</tr>
+		</g:each>
+		</tr>
+				
+			
+</table>
+</center>		
 			<section id="footer-bar">
 				<div class="row">
 					<div class="span3">
