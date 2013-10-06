@@ -24,7 +24,7 @@ class PostadController extends BaseController {
 	def save() {
         def postadInstance = new Postad(params)
 
-	def funcPic = request.getFile('itemPicture')
+	def funcPic = request.getFile('picture')
 
 		// List of OK mime-types
 		def okcontents = ['image/png', 'image/jpeg', 'image/gif']
