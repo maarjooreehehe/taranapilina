@@ -30,7 +30,7 @@
 						<ul class="user-menu">				
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 							<g:if test="${!session.username}">
-							<li><g:link controller="account" action="login">Login</a></g:link></li>					
+								<li><g:link controller="account" action="login">Login</a></g:link></li>					
 							</g:if>
 							<li><g:link controller="account" action="create">Register</g:link></li>		
 						</ul>
@@ -106,27 +106,31 @@
 						<g:textField name="q" class="input-block-level search-query" value="${params.q}" size="50" placeholder="SEARCH"/>
 					</g:form>
 				</div>
+				<g:if test="${session.username == 'supadmin'}">
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">
-						
 							<g:hiddenField name="id" value="${accountInstance?.id}" />
-						
 							<li>Hello ${session.username}!</li>
 							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-							<g:if test="${!session.username == 'supadmin'}">
-								<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
-							</g:if>
-							<g:else>
-							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
-							</g:else>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>
 						</ul>
-						<g:if test="${!session.username}">
-						<li><g:link controller="account" action="login">Login</a></g:link></li>					
-						</g:if>
 					</div>
 				</div>
+				</g:if>
+				<g:else>
+				<div class="span8">
+					<div class="account pull-right">
+						<ul class="user-menu">
+							<g:hiddenField name="id" value="${accountInstance?.id}" />
+							<li>Hello ${session.username}!</li>
+							<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
+							<li><g:link controller="account" action="logout">Logout</a></g:link></li>
+						</ul>
+					</div>
+				</div>
+				</g:else>
 			</div>
 		</div>
 		<div id="wrapper" class="container">
