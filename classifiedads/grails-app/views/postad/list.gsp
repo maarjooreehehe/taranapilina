@@ -38,25 +38,38 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+	<center>		
+	<table border = "1" cellpadding = "5" width = "950px">
+	
 			
-	<table border = "1">
-	<g:each in="${postadInstanceList}" status="i" var="postadInstance">
-	<tr>
-	<td>
-	<span class="property-value" aria-labelledby="picture-label">
-		<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="350" height="370" />
-		</span>
-		</td>
+		<tr>
+		<g:each in="${postadInstanceList}" status="i" var="postadInstance">
+			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+				<td>
+					<span class="property-value" aria-labelledby="picture-label">
+					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="300" height="250" />
+					</span>
+				</td>
 	
-		<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
-										<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
-										<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
-										<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
-										</td>
-	
-</tr>
-</g:each>
-</table
+				<td>
+				
+				
+				<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
+				<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
+				<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
+				<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
+				</b>
+				
+				</td>
+			</tr>
+		</g:each>
+		</tr>
+				
+			
+</table>
+</center>
+			
+			
 			
 			<section id="footer-bar">
 				<div class="row">
