@@ -61,10 +61,13 @@
 					<div class="product-box">
 									<b>
 										<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
-										<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
+										<li>${fieldValue(bean: postadInstance, field: "location")}</li>
 										<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
 										<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
 									</b>
+									
+									
+									
 
 					</div>
 				</ul>
@@ -92,12 +95,13 @@
 					<g:else>
 					<div class="span4">
 					
+					<g:if test="${!session.username == 'supadmin'}">
 						<h4>My Account</h4>
 						<ul class="nav">
 							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
 							<li><g:link controller="account" class="edit" action="edit" id="${session.userId}">Edit Account Details</g:link></li>
-							
 						</ul>
+					</g:if>
 			
 					</div>
 					</g:else>

@@ -79,7 +79,8 @@
 					<div class="product-box">	
 		
 				<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
-				<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
+				<li>Owner: ${postadInstance?.owner}</li>
+				<li>${fieldValue(bean: postadInstance, field: "location")}</li>
 				<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
 				<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
 				</b>
@@ -167,8 +168,11 @@
 	
 			
 		<tr>
+		
 		<g:each in="${postadInstanceList}" status="i" var="postadInstance">
+			
 			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+				
 				<td>
 				
 				<ul class="thumbnails listing-products">
@@ -189,7 +193,8 @@
 					<div class="product-box">	
 					
 				<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
-				<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
+				<li>Owner: ${postadInstance?.owner}</li>
+				<li>${fieldValue(bean: postadInstance, field: "location")}</li>
 				<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
 				<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
 				</b>
@@ -198,8 +203,11 @@
 				</ul>
 				
 				</td>
+				
 			</tr>
+			
 		</g:each>
+		
 		</tr>
 				
 			
