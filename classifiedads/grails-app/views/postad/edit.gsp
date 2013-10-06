@@ -50,7 +50,7 @@
 				</fieldset>
 				
 				
-				
+				</br>
 				<fieldset class="buttons">
 				
 					<g:actionSubmit name="save" action="update" input tabindex="9" class="btn btn-inverse large"  value="${message(code: 'default.button.update.label', default: 'Update')}" />

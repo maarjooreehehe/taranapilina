@@ -33,50 +33,45 @@
 		<div id="list-postad" class="content scaffold-list" role="main">
 			<section class="header_text sub">
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
-				<h4><span>New products</span></h4>
+				<h4><span>New Products</span></h4>
 			</section>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			
-	<center>		
+<center>		
 	<table cellpadding = "5" width = "950px">
 				<tr>
-							<tbody>
-								<g:each in="${postadInstanceList}" status="i" var="postadInstance">
-										
-				
+					<g:each in="${postadInstanceList}" status="i" var="postadInstance">
+						<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 				<td>
-				<ul class="thumbnails listing-products">
-					<div class="product-box">	
-								<span class="property-value" aria-labelledby="picture-label">
-									<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width = "370" height="370" />
-								</span>
-					</div>
-				</ul>
+					<ul class="thumbnails listing-products">
+						<div class="product-box">	
+							<span class="property-value" aria-labelledby="picture-label">
+								<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width = "300" height="250" />
+							</span>
+						</div>
+					</ul>
 				</td>
+				
+				&nbsp;&nbsp;
 				
 				<td>
 				<ul class="thumbnails listing-products">
 					<div class="product-box">
-									<b>
-										<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
-										<li>${fieldValue(bean: postadInstance, field: "location")}</li>
-										<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
-										<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
-									</b>
-									
-									
-									
-
+						<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
+							<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
+							<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
+							<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
+						</b>
 					</div>
 				</ul>
 				</td>
-								</g:each>
-							</tbody>
-			</tr>
+						</tr>
+					</g:each>
+				</tr>
 	</table>
-	</center>	
+	</center>		
 			
 			<section id="footer-bar">
 				<div class="row">

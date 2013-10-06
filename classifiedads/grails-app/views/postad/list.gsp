@@ -40,7 +40,7 @@
 			</g:if>
 			
 			
-		
+	
 	<center>
 	
 
@@ -163,7 +163,9 @@
 		
 			
 			
-<center>		
+<center>	
+<h4><i>Available Products</i></h4>
+</br>		
 	<table cellpadding = "5" width = "950px">
 	
 			

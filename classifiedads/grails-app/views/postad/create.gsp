@@ -67,6 +67,9 @@
 																</fieldset>
 																
 																</br>
+																<div class="span6">
+															<h4>Ad Description</h4>
+															<p>Providing a relevant text description will give your advertisement a higher ranking in our search results.</p>
 																
 				
 																</br>
