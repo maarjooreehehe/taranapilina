@@ -38,35 +38,69 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-	<center>		
-	<table border = "1" cellpadding = "5" width = "950px">
-	
 			
+			
+		
+	<center>
+	
+
+	<table cellpadding = "10" width = "950px">
+	
 		<tr>
+
+			
 		<g:each in="${postadInstanceList}" status="i" var="postadInstance">
+					
+		
 			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+			
 				<td>
+				
 					<span class="property-value" aria-labelledby="picture-label">
+						
+											
+									
+				<ul class="thumbnails listing-products">
+					
+						<div class="product-box">		
 					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="300" height="250" />
 					</span>
+					
+</div>
+			
+				</ul>
+
+
 				</td>
 	
 				<td>
-		
+		<ul class="thumbnails listing-products">
+					
+						<div class="product-box">	
 				<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
 				<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
 				<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
 				<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
 				</b>
+				</span>
+					
+</div>	
 				
 				</td>
+					
 			</tr>
+	
 		</g:each>
+		
+	
 		</tr>
-				
+			
 			
 </table>
+
+
 </center>
+
 			
 			
 			
