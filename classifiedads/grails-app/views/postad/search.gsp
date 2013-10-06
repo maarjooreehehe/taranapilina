@@ -60,6 +60,7 @@
 				<ul class="thumbnails listing-products">
 					<div class="product-box">
 						<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
+							<li>Owner: ${postadInstance?.owner}</li>
 							<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
 							<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
 							<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
