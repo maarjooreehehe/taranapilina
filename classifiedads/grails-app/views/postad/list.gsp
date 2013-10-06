@@ -39,47 +39,24 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			
-	<table>	
+	<table border = "1">
+	<g:each in="${postadInstanceList}" status="i" var="postadInstance">
 	<tr>
+	<td>
+	<span class="property-value" aria-labelledby="picture-label">
+		<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="350" height="370" />
+		</span>
+		</td>
 	
-	<section class="main-content">		
-		<div class="row">						
-			<div class="span9">								
-				<ul class="thumbnails listing-products">
-					<li class="span3">
-						<div class="product-box">
-						
-							
-								<g:each in="${postadInstanceList}" status="i" var="postadInstance">
-									
-										<td><span class="property-value" aria-labelledby="picture-label">
-											<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="350" height="370" />
-											</span>
-										</td>
-										
-										
-										
-										<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
+		<td><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
 										<a href="#" class="category">${fieldValue(bean: postadInstance, field: "location")}</a></br>
 										<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
 										<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
 										</td>
-									
-								</g:each>
-							</tbody>
-							
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-			
-			</tr> 
-				</table>						
-								
 	
-
+</tr>
+</g:each>
+</table
 			
 			<section id="footer-bar">
 				<div class="row">
