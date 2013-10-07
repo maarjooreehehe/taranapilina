@@ -151,7 +151,7 @@ class AccountController {
 		session.username = null
 		session.name = null
 		session.userId = null
-		flash.message = 'Successfully logged out'
+		flash.message = 'Successfully logged out!'
 		redirect(controller:'postad', action:'list')
 	}
 }
