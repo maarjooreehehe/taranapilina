@@ -117,6 +117,9 @@
 							<g:if test="${!session.username == 'supadmin'}">
 								<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
 							</g:if>
+							<g:else>
+							<li><g:link controller="postad" action="create">Post Ad</a></g:link></li>
+							</g:else>
 							<li><g:link controller="account" action="logout">Logout</a></g:link></li>
 						</ul>
 						<g:if test="${!session.username}">
