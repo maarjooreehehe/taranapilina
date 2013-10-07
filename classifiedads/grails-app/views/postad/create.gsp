@@ -116,7 +116,7 @@
 						<h4>My Account</h4>
 						<ul class="nav">
 							
-							<li><g:link controller="account" class="show" action="list" id="${session.userId}">Show Account Details</g:link></li>
+							<li><g:link controller="account" class="show" action="show" id="${session.userId}">Show Account Details</g:link></li>
 							<li><g:link controller="account" class="edit" action="edit" id="${session.userId}">Edit Account Details</g:link></li>
 							
 						</ul>
