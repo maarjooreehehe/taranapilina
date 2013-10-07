@@ -141,7 +141,7 @@ class AccountController {
 		}
 
 		else {
-		flash['message'] = 'Please enter a valid username and password'
+		flash['message'] = 'Sorry, please enter a valid username and password.'
 		}
 
 	}
