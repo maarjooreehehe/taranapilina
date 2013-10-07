@@ -42,14 +42,7 @@
 							<li><g:link controller="account" action="create">Register</g:link></li>
 						</ul>					
 					</div>
-					<div class="span4">
-						<%--<h4>My Account</h4>
-						<ul class="nav">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Order History</a></li>
-							
-						</ul>--%>
-					</div>
+					
 					<div class="span5">
 						<p><img class="logo" src="${resource(dir:'themes/images', file: 'logo.png')}" ></p>
 						
