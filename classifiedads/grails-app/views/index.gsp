@@ -75,6 +75,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'category: Souvenirs and Giveaways']">Souvenirs and Giveaways</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Sports and Hobbies']">Sports and Hobbies</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Tools']">Tools</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Cars']">Cars</g:link></li>
 								</ul>
 							</li>
 							<li><a>Location</a>
@@ -225,6 +226,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'category: Souvenirs and Giveaways']">Souvenirs and Giveaways</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Sports and Hobbies']">Sports and Hobbies</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Tools']">Tools</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Cars']">Cars</g:link></li>
 								</ul>
 							</li>
 							<li><a>Location</a>
@@ -373,6 +375,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'category: Souvenirs and Giveaways']">Souvenirs and Giveaways</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Sports and Hobbies']">Sports and Hobbies</g:link></li>
 									<li><g:link controller="postad" action="search" params="[q: 'category: Tools']">Tools</g:link></li>
+									<li><g:link controller="postad" action="search" params="[q: 'category: Cars']">Cars</g:link></li>
 								</ul>
 							</li>
 							<li><a>Location</a>
