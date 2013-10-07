@@ -67,12 +67,7 @@
 																</fieldset>
 																
 																</br>
-																<div class="span6">
-															<h4>Ad Description</h4>
-															<p>Providing a relevant text description will give your advertisement a higher ranking in our search results.</p>
 																
-				
-																</br>
 																<fieldset class="buttons">
 																<g:submitButton name="create" class="save" input tabindex="9" class="btn btn-inverse large" value="Create Ad" />
 																</fieldset>
