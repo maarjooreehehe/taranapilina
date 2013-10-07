@@ -30,7 +30,7 @@ class AccountController {
 		
 					to "${accountInstance.emailAddress}"
 					subject "Taranapilina Registration"
-					body "Welcome to our website, you can now log in at http://localhost:8080/classifiedads/account/login"
+					body "Welcome to Taranapilina! You can now log in at http://localhost:8080/classifiedads/account/login"
 					}
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
