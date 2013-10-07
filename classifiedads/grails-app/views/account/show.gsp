@@ -106,8 +106,8 @@
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${accountInstance?.id}" />
-					<g:actionSubmit class="Edit" action="edit" value="Edit" input tabindex="9" class="btn btn-inverse large" />
-					<g:actionSubmit class="delete" action="delete" value="Delete" input tabindex="9" class="btn btn-inverse large" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:actionSubmit class="Edit" action="edit" value="Edit Account" input tabindex="9" class="btn btn-inverse large" />
+					<g:actionSubmit class="delete" action="delete" input tabindex="9" class="btn btn-inverse large" value="Create Ad" value="Delete Account" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
 			</g:else>
