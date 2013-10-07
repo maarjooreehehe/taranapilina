@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="layout" content="main"/>
+		<meta name="layout" content="mainmain"/>
 		<title>Post and Shoppe 'til you drop!</title>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/css', file: 'bootstrap.min.css')}" />      
@@ -28,7 +28,7 @@
 	<body>
 		<section class="header_text sub">
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
-			<h4><span>WELCOME, Check your email for confirmation!</span></h4>
+			<h4><span>WELCOME, Please check your email for confirmation!</span></h4>
 			
 		</section>
 		
@@ -38,8 +38,6 @@
 						<h4>Navigation</h4>
 						<ul class="nav">
 							<li><a href="./index.html">Homepage</a></li>  
-							<li><g:link controller="account" action="login">Login</a></g:link></li>
-							<li><g:link controller="account" action="create">Register</g:link></li>
 						</ul>					
 					</div>
 					
