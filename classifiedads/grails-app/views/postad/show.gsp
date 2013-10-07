@@ -132,7 +132,7 @@
 						<ul class="nav">
 							<li class="current_page_item"><a href="${createLink(uri: '/')}">Homepage</a></li>
 							<li><g:link controller="account" action="list">List of All Accounts</g:link></li>
-							<li><a href="./postad/list">List of All Ads</a></li>
+							<li><g:link controller="postad" action="list">List of All Ads</g:link></li>
 									
 						</ul>					
 					</div>
