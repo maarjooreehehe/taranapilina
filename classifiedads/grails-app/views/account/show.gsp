@@ -29,6 +29,7 @@
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
 			<h4><span>My Account Details</span></h4>
 		</section>
+
 		
 			
 				<g:if test="${accountInstance?.name}">
