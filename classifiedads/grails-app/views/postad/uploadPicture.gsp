@@ -8,7 +8,7 @@
 		
 	</head>
 	<body>
-		<h1>Upload Room Picture</h1>
+		<h1>Edit Ad Picture</h1>
 	
 
 		<div id="create-postad" class="nav">

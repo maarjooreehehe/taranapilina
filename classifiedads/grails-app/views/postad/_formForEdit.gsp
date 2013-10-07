@@ -50,3 +50,25 @@
 	<g:select name="category" from="${postadInstance.constraints.category.inList}" required="" value="${postadInstance?.category}" valueMessagePrefix="postad.category" class="input-xlarge"/>
 </div>
 
+
+<div class="fieldcontain ${hasErrors(bean: postadInstance, field: 'category', 'error')} required">
+<label for="description">
+		<g:message code="postad.category.label" default="Ad Description" />
+		
+</label>
+
+<div class="fieldcontain ${hasErrors(bean: postadInstance, field: 'description', 'error')} ">
+<g:textArea rows="10" id="textarea"  name="description" value="${postadInstance?.description}" class="input-xlarge"/>
+</div>
+
+</br>
+
+
+	
+
+
+
+
+
+	
+

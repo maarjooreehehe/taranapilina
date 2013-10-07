@@ -141,7 +141,7 @@
 					
 					
 					<nav id="menu" class="pull-right">
-						<ul>
+						<!--<ul>
 							<li><g:link controller="postad" action="list">View All Ads</g:link></li>
 							<li><a>Categories</a>
 								<ul>	
@@ -181,7 +181,7 @@
 									<li><g:link controller="postad" action="search" params="[q: 'condition: Defective']">Defective</g:link></li>
 								</ul>
 							</li>
-						</ul>
+						</ul> -->
 					</nav>
 				</div>
 			</section>

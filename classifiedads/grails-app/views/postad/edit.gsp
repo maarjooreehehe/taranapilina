@@ -46,7 +46,7 @@
 				<g:hiddenField name="id" value="${postadInstance?.id}" />
 				<g:hiddenField name="version" value="${postadInstance?.version}" />
 				<fieldset class="form">
-					<g:render template="form"/>
+					<g:render template="formForEdit"/>
 				</fieldset>
 				
 				
