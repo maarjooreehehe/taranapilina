@@ -26,6 +26,16 @@
 	<input type = "password" maxlength = '10' name="password" required="" value="${accountInstance?.password}" placeholder="Enter your password 6-10 characters only." class="input-xlarge" />
 	
 	</div>
+	
+<div class="fieldcontain ${hasErrors(bean: accountInstance, field: 'password2', 'error')} ">
+	<label for="password2">
+		<g:message code="account.password2.label" default="Password" />
+		<span class="required-indicator">*</span>
+	</label>
+	<input type = "password" maxlength = '10' name="password2" required="" value="${accountInstance?.password2}" placeholder="Enter your password again." class="input-xlarge" />
+	
+	</div>
+	
 
 
 <div class="fieldcontain ${hasErrors(bean: accountInstance, field: 'emailAddress', 'error')} required">

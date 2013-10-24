@@ -26,6 +26,11 @@ class AccountController {
             render(view: "create", model: [accountInstance: accountInstance])
             return
         }
+		else if (!accountInstance.save()){
+			flash.error = "error(s) creating user: Value of the confirmation password does not match."
+			return [account:accountInstance]
+		} else {
+			
 		asyncMailService.sendMail{
 		
 					to "${accountInstance.emailAddress}"
@@ -35,7 +40,7 @@ class AccountController {
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
         redirect(action: "afterreg", id: accountInstance.id)
-    }
+    }}
 	
 	def show(Long id) {
         def accountInstance = Account.get(id)
