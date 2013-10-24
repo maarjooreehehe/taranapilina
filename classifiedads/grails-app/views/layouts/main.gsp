@@ -27,7 +27,7 @@
 				<div class="span8">
 					<div class="account pull-right">
 					
-						<g:if test="${session.username == 'supadmin'}">
+						<g:if test="${session.username}">
 							<ul class="user-menu">
 								<li>Hello ${session.username}!</li>
 								<li class="current_page_item"><a href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>

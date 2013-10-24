@@ -29,7 +29,7 @@
 	
 <div class="fieldcontain ${hasErrors(bean: accountInstance, field: 'password2', 'error')} ">
 	<label for="password2">
-		<g:message code="account.password2.label" default="Password" />
+		<g:message code="account.password2.label" default="Re-enter your Password" />
 		<span class="required-indicator">*</span>
 	</label>
 	<input type = "password" maxlength = '10' name="password2" required="" value="${accountInstance?.password2}" placeholder="Enter your password again." class="input-xlarge" />
