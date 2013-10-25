@@ -40,6 +40,8 @@
 							<g:if test="${postadInstance.picture}">
 							<tr>					
 								<span class="property-value" aria-labelledby="picture-label">
+								<!-- <img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
+								-->
 								<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" />
 								</span>
 							</tr>
@@ -66,7 +68,8 @@
 									
 									<strong>Date Posted: </strong>
 									<g:if test="${postadInstance?.dateCreated}">
-									<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" type="datetime" style="LONG" timeStyle="SHORT"/></span>
+									<!--<span class="property-value" aria-labelledby="dateCreated-label"></span>-->
+									<g:sortableColumn property="dateCreated" title="${message(code: 'postad.dateCreated.label', default: 'Date Created')}" /><g:formatDate date="${postadInstance?.dateCreated}" type="datetime" style="LONG" timeStyle="SHORT"/>
 									</g:if><br>
 									
 									<strong>Seller's Contact Number: </strong>
@@ -168,6 +171,7 @@
 			<img class="pageBanner" src="${resource(dir:'themes/images', file: 'pageBanner.png')}" >
 			<h4><span>Advertisement Details</span></h4>
 		</section>
+		
 		<section class="main-content">				
 				<div class="row">						
 					<div class="span9">
@@ -203,6 +207,7 @@
 									
 									<strong>Date Posted: </strong>
 									<g:if test="${postadInstance?.dateCreated}">
+									
 									<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" type="datetime" style="LONG" timeStyle="SHORT"/></span>
 									</g:if><br>
 									
@@ -341,6 +346,7 @@
 									
 									<strong>Date Posted: </strong>
 									<g:if test="${postadInstance?.dateCreated}">
+									
 									<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${postadInstance?.dateCreated}" type="datetime" style="LONG" timeStyle="SHORT"/></span>
 									</g:if><br>
 									

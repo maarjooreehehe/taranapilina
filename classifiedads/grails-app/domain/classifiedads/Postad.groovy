@@ -15,6 +15,7 @@ class Postad {
 	String description
 	Account owner
 	
+	
 	static belongsTo = [Account]
 	
 	static searchable = true
@@ -34,7 +35,7 @@ class Postad {
     }
 	
 	static mapping = {
-	description type: "text"
+	sort dateCreated: "desc"
 	}
 
 }

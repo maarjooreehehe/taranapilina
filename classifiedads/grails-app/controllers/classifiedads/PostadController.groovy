@@ -2,6 +2,7 @@ package classifiedads
 
 import org.springframework.dao.DataIntegrityViolationException
 
+
 class PostadController extends BaseController {
 	
 	def beforeInterceptor = [action:this.&auth,except:['list', 'show', 'search', 'picture_image']]
@@ -11,10 +12,15 @@ class PostadController extends BaseController {
     def index() {
         redirect(action: "list", params: params)
     }
+	
+	
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [postadInstanceList: Postad.list(params), postadInstanceTotal: Postad.count()]
+	//def postadInstance = Postad.list([sort:'dateCreated', order:'asc'])
+	def postadInsatnce = Postad.findAll([sort: 'dateCreated', order:'desc', max: 10])
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+       [postadInstanceList: Postad.list(params), postadInstanceTotal: Postad.count()]
+	   
     }
 
     def create() {
@@ -22,6 +28,7 @@ class PostadController extends BaseController {
     }
 	
 	def save() {
+	
         def postadInstance = new Postad(params)
 
 	def funcPic = request.getFile('picture')
@@ -50,7 +57,8 @@ class PostadController extends BaseController {
     }
 	
 	def showPicture(){
-		def postadInstance = Postad.get(params.id)
+		//def postadInstance = Postad.get(params.id)
+		
 			if (!postadInstance || !postadInstance.picture || !postadInstance.pictureType) {
 				response.sendError(404)
 				return;
@@ -63,7 +71,8 @@ class PostadController extends BaseController {
 	}
 	
     def show(Long id) {
-        def postadInstance = Postad.get(id)
+	
+		 def postadInstance = Postad.get(id)
         if (!postadInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'postad.label', default: 'Postad'), id])
             redirect(action: "list")
@@ -71,6 +80,8 @@ class PostadController extends BaseController {
         }
 
         [postadInstance: postadInstance]
+		
+		
     }
 
     def edit(Long id) {
@@ -192,5 +203,8 @@ class PostadController extends BaseController {
 			redirect(action: "index")
 		}
 	}
+	
+	
+	
 }
 

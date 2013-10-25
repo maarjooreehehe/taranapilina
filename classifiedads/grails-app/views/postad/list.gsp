@@ -42,68 +42,44 @@
 			
 	
 	<center>
-	
-
-	<table cellpadding = "10" width = "950px">
-	
+		<table cellpadding = "10" width = "950px">
 		<tr>
-
-			
-		<g:each in="${postadInstanceList}" status="i" var="postadInstance">
-					
-		
-			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-			
-				<td>
-				<ul class="thumbnails listing-products">
-					<div class="product-box">		
-				
-					<span class="property-value" aria-labelledby="picture-label">
-						
-									
-									
-				
-					
-					<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="300" height="250" />
-					</span>
-					
-				
-					</div>
-				</ul>
-
-				</td>
+			<g:each in="${postadInstanceList}" status="i" var="postadInstance">
+				<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					<td>
+						<ul class="thumbnails listing-products">
+							<div class="product-box">		
+								<span class="property-value" aria-labelledby="picture-label">
+								<img class="picture" src="${createLink(controller:'postad', action:'picture_image', id:postadInstance.ident())}" width="300" height="250" />
+								</span>
+							</div>
+						</ul>
+					</td>
 				
 			&nbsp;&nbsp;
-				<td>
+			<td>
 				<ul class="thumbnails listing-products">
 					<div class="product-box">	
-		
-				<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
-				<li>Owner: ${postadInstance?.owner}</li>
-				<li>${fieldValue(bean: postadInstance, field: "location")}</li>
-				<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
-				<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
-				</b>
-				
-				</div>
+						<b><g:link controller="postad" class="show" action="show" id="${postadInstance?.id}" class="title">${fieldValue(bean: postadInstance, field: "adname")}</g:link></br>
+						<li>Owner: ${postadInstance?.owner}</li>
+						<li>${fieldValue(bean: postadInstance, field: "location")}</li>
+						<p class="price">${fieldValue(bean: postadInstance, field: "price")}</p>
+						<g:link controller="postad" class="show" action="show" id="${postadInstance?.id}">More details</g:link>
+						</b>
+					</div>
 				</ul>	
-
-				
-				</td>
+			</td>
 					
-			</tr>
-			
-	
-		</g:each>
-		
-	
+				</tr>
+			</g:each>
 		</tr>
-			
-			
-</table>
+	</table>
+	<div class="pagination">
+				<g:paginate total="${postadInstanceTotal}" />
+			</div>
 	
-
 </center>
+	
 
 			
 			
@@ -214,6 +190,10 @@
 				
 			
 </table>
+<div class="pagination">
+				<g:paginate total="${postadInstanceTotal}" />
+			</div>
+	
 </center>		
 			<section id="footer-bar">
 				<div class="row">
@@ -273,11 +253,6 @@
 		
 		
 			
-			<div class="pagination">
-				<g:paginate total="${postadInstanceTotal}" />
-				
-				
-			</div>
 		</g:else>
 	</body>
 </html>
